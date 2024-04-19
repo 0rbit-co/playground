@@ -1,14 +1,14 @@
 "use client";
-import { useState } from "react";
+import React from "react";
 import PrismLoader from "./PrismLoader";
-import InlineCode from "./InlineCode";
 import { useCodeStore } from "../_store/store";
+import InlineCode from "./InlineCode";
 
-const GETReq = () => {
+const POSTReq = () => {
   const setCurCode = useCodeStore((state) => state.changeCode);
   const assignVar = '_0RBIT= "WSXUI2JjYUldJ7CKq9wE1MGwXs-ldzlUlHOQszwQe0s"';
   const getRealData =
-    'Send({\n\tTarget = _0RBIT,\n\tAction = "Get-Real-Data",\n\tUrl = "https://dummyjson.com/products"\n\t})';
+    'local json = require("json")\nSend({Target = _0RBIT,Action = "Post-Real-Data",Url = "https://arweave.net/graphql",Body = json.encode({query = [[query {transactions(owners: ["vh-NTHVvlKZqRxc8LyyTNok65yQ55a_PJ1zWLb9G2JI"]) {edges {node {id}}}}]],variables = {}})})';
   const inbox = "#Inbox";
   // const [code, setCode] = useState("");
   const tryItHandler = (code: any) => {
@@ -30,10 +30,10 @@ const GETReq = () => {
             tryItHandler(assignVar);
           }}
           className="bg-[#212121] px-4 py-[3px] rounded-md 
-          text-center text-[13.5px] 
-          flex items-center justify-center 
-          h-fit min-w-fit
-          hover:text-[15px] hover:cursor-pointer"
+      text-center text-[13.5px] 
+      flex items-center justify-center 
+      h-fit min-w-fit
+      hover:text-[15px] hover:cursor-pointer"
         >
           Try It!
         </div>
@@ -56,10 +56,10 @@ const GETReq = () => {
             tryItHandler(getRealData);
           }}
           className="bg-[#212121] px-4 py-[3px] rounded-md 
-          text-center text-[13.5px] 
-          flex items-center justify-center 
-          h-fit min-w-fit
-          hover:text-[15px] hover:cursor-pointer"
+      text-center text-[13.5px] 
+      flex items-center justify-center 
+      h-fit min-w-fit
+      hover:text-[15px] hover:cursor-pointer"
         >
           Try It!
         </div>
@@ -100,10 +100,10 @@ const GETReq = () => {
             tryItHandler("%23Inbox");
           }}
           className="bg-[#212121] px-4 py-[3px] rounded-md 
-          text-center text-[13.5px] 
-          flex items-center justify-center 
-          h-fit min-w-fit
-          hover:text-[15px] hover:cursor-pointer"
+      text-center text-[13.5px] 
+      flex items-center justify-center 
+      h-fit min-w-fit
+      hover:text-[15px] hover:cursor-pointer"
         >
           Try It!
         </div>
@@ -116,4 +116,4 @@ const GETReq = () => {
   );
 };
 
-export default GETReq;
+export default POSTReq;

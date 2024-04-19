@@ -2,7 +2,7 @@ import React from "react";
 
 const InfoStatic = () => {
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3 mb-9">
       <h2 className="text-[21px]">gm! Try it out yourself!</h2>
       <div className="text-center text-[18px]">
         <p>Checkout our AO playground 👀 by betterIDEa</p>

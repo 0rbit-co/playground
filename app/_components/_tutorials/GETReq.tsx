@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
-import PrismLoader from "./PrismLoader";
-import InlineCode from "./InlineCode";
-import { useCodeStore } from "../_store/store";
+import PrismLoader from "../PrismLoader";
+import InlineCode from "../InlineCode";
+import { useCodeStore } from "../../_store/store";
 
 const GETReq = () => {
   const setCurCode = useCodeStore((state) => state.changeCode);

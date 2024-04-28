@@ -29,7 +29,7 @@ const TypeButton = ({ btnName }: any) => {
   return (
     <h3
       onClick={tutorialClickHandler}
-      className="bg-[#EB8F44] px-[12px] py-[6px] rounded-xl text-center
+      className="bg-[#EB8F44] text-blackOlive px-[12px] py-[6px] w-36 rounded-xl text-center
       hover:bg-[#eb8f447a] hover:cursor-pointer
       "
     >

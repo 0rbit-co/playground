@@ -1,117 +1,97 @@
-"use client";
-import React from "react";
+import { useState } from "react";
 import PrismLoader from "../PrismLoader";
-import { useCodeStore } from "../../_store/store";
 import InlineCode from "../InlineCode";
+import { useCodeStore } from "../../_store/store";
 
 const POSTReq = () => {
   const setCurCode = useCodeStore((state) => state.changeCode);
   const assignVar = '_0RBIT= "WSXUI2JjYUldJ7CKq9wE1MGwXs-ldzlUlHOQszwQe0s"';
   const getRealData =
-    'local json = require("json")\nSend({Target = _0RBIT,Action = "Post-Real-Data",Url = "https://arweave.net/graphql",Body = json.encode({query = [[query {transactions(owners: ["vh-NTHVvlKZqRxc8LyyTNok65yQ55a_PJ1zWLb9G2JI"]) {edges {node {id}}}}]],variables = {}})})';
-  const inbox = "#Inbox";
-  // const [code, setCode] = useState("");
+    'Send({\n\tTarget = _0RBIT,\n\tAction = "Get-Real-Data",\n\tUrl = "https://dummyjson.com/products"\n})';
+  const inbox = "Inbox[#Inbox].Data";
+
   const tryItHandler = (code: any) => {
     console.log(code);
     setCurCode(code);
   };
+
   return (
-    <div className="max-h-[300px] overflow-scroll ">
-      {" "}
-      <h4 className=" font-semibold"> {">"} Step 1: Create a variable</h4>
+    <div className="h-[600px] overflow-scroll hide">
+      <h4 className="font-bold">{"$"} Step 1: Create a variable</h4>
       <div className="flex flex-row items-center justify-center gap-3">
         <pre className="language-js flex flex-row justify-between items-center">
-          <code className="language-js">{assignVar}</code>
+          <code className="language-lua">{assignVar}</code>
           <PrismLoader />
         </pre>
         <div
-          onClick={() => {
-            // setCode(assignVar);
-            tryItHandler(assignVar);
-          }}
-          className="bg-[#212121] px-4 py-[3px] rounded-md 
-      text-center text-[13.5px] 
-      flex items-center justify-center 
-      h-fit min-w-fit
-      hover:text-[15px] hover:cursor-pointer"
+          onClick={() => tryItHandler(assignVar)}
+          className="terminal-button"
         >
           Try It!
         </div>
       </div>
-      <h6>
+      <p className="terminal-text">
         This will create a variable <InlineCode>_0RBIT</InlineCode> and assign
-        the value of the process ID of the 0rbit's GET{" "}
-        <InlineCode>ao</InlineCode> process.
-      </h6>
-      <h4 className=" font-semibold">{"> "}Step 2: Create a Get request</h4>
-      <div className="rounded-x text-[15px]"></div>
+        the value of the process ID of the 0rbit's GET <InlineCode>ao</InlineCode> process.
+      </p>
+      <h4 className="font-bold">{"$"} Step 2: Create a Get request</h4>
       <div className="flex flex-row items-center justify-center gap-3">
         <pre className="language-lua">
           <code className="language-lua">{getRealData}</code>
           <PrismLoader />
         </pre>
         <div
-          onClick={() => {
-            // setCode(assignVar);
-            tryItHandler(getRealData);
-          }}
-          className="bg-[#212121] px-4 py-[3px] rounded-md 
-      text-center text-[13.5px] 
-      flex items-center justify-center 
-      h-fit min-w-fit
-      hover:text-[15px] hover:cursor-pointer"
+          onClick={() => tryItHandler(getRealData)}
+          className="terminal-button"
         >
           Try It!
         </div>
       </div>
-      <h6>In this command:</h6>
-      <ul>
-        <li>
-          TARGET is the process ID of the ao process user wants to interact
-          with, which in this case is 0rbit's GET ao process.
-        </li>
-        <li>
-          Action is the specific tag required by 0rbit to perform the Get
-          request.
-        </li>
-        <li>
-          {" "}
-          Url is the URL of the website from which we want to get the data.{" "}
-        </li>
-      </ul>
-      <h6>
-        This will create a Get request and send it to the 0rbit's GET ao
+      <p className="terminal-text flex flex-col">
+        <div>
+        In this command:
+        </div>
+        <br />
+        <div>
+        <InlineCode>TARGET</InlineCode> is the process ID of the <InlineCode>ao</InlineCode> process user wants to interact
+        with, which in this case is <span className="font-roboto-mono">0</span>rbit's <InlineCode>GET</InlineCode> ao process.
+        </div>
+        <br />
+        <div>
+        <InlineCode>Action</InlineCode> is the specific tag required by <span className="font-roboto-mono">0</span>rbit to perform the <InlineCode>GET</InlineCode>
+        request.
+        </div>
+        <br />
+        <div>
+        <InlineCode>Url</InlineCode> is the URL of the website from which we want to get the data.
+        </div>
+      </p>
+      <p className="terminal-text">
+        This will create a Get request and send it to the <InlineCode><span className="font-roboto-mono">0</span>rbit's GET</InlineCode> ao
         process.
-      </h6>
-      <h4 className=" font-semibold">{"> "}Step 3: Check the Inbox</h4>
-      <h6>
+      </p>
+      <h4 className="font-bold">{"$"} Step 3: Check the Inbox</h4>
+      <p className="terminal-text">
         After sending the request, you can check the inbox of your ao process to
         see the response from the 0rbit. Just type the following command in the
         terminal:
-      </h6>
+      </p>
       <div className="flex flex-row items-center justify-center gap-3">
         <pre className="language-lua">
           <code className="language-lua">{inbox}</code>
           <PrismLoader />
         </pre>
         <div
-          onClick={() => {
-            // setCode(assignVar);
-            tryItHandler("%23Inbox");
-          }}
-          className="bg-[#212121] px-4 py-[3px] rounded-md 
-      text-center text-[13.5px] 
-      flex items-center justify-center 
-      h-fit min-w-fit
-      hover:text-[15px] hover:cursor-pointer"
+          onClick={() => tryItHandler("%23Inbox")}
+          className="terminal-button"
         >
           Try It!
         </div>
       </div>
-      <h6>
-        For this particular example, the response from the 0rbit will be a
+      <p className="terminal-text">
+        For this particular example, the response from the <span className="font-roboto-mono">0</span>rbit will be a
         number of products.
-      </h6>
+      </p>
     </div>
   );
 };

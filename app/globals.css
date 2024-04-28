@@ -1,7 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 * {
   transition: all 0.6s;
+}
+
+.terminal-text {
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.terminal-button {
+  background-color: #212121;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.terminal-button:hover {
+  background-color: #444;
+}
+
+.hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }

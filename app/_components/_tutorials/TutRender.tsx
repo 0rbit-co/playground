@@ -9,7 +9,7 @@ const TutRender = () => {
     console.log(currentTut);
   }, [currentTut]);
   return (
-    <div className="bg-[#121212] px-9 py-6 mt-6 rounded-xl min-h-fit">
+    <div className="bg-[#121212] px-9 py-6 h-[500px] overflow-scroll hide mt-10 rounded-xl">
       {currentTut == "get" && <GETReq />}
       {currentTut == "post" && <POSTReq />}
       {currentTut == "pf" && <PriceFeed />}

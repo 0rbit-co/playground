@@ -3,9 +3,10 @@ import React from "react";
 
 const Header = () => {
   return (
-    <header className="text-center fixed top-0 flex flex-col items-center justify-center mb-12 mt-3">
-      <Image src="/logo.svg" width={120} height={90} alt="orbit 0rbit logo" />
-      <h1 className="text-[30px] mt-[-15px] text-[#272a1c]">Playground</h1>
+    <header className="fixed top-0 pt-2 px-2 w-full z-50 backdrop-blur-md">
+        <div className="flex items-center">
+          <Image src="/logo.svg" width={100} height={100} alt="orbit 0rbit logo" />
+        </div>
     </header>
   );
 };

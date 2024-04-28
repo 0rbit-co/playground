@@ -11,10 +11,17 @@ const BetterIDEa = () => {
   }, [curCode]);
 
   return (
+    <div>
     <iframe
-      className="w-[100%] px-[48px] min-h-[60vh] py-[48px]"
+      className="w-[100%] px-[48px] min-h-[90vh] py-[48px]"
       src={`https://ide.betteridea.dev/?codeblock=${a}`}
     ></iframe>
+    <div className="flex justify-end items-end px-10">
+    <span className="text-beige/70 text-sm">
+          Powered by <a href="#" className="underline">Better Idea</a>
+        </span>
+    </div>
+    </div>
   );
 };
 

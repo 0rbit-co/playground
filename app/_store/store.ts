@@ -8,7 +8,7 @@ interface CodeState {
   changeCode: (newCode: string) => void;
 }
 export const useTutorialStore = create<TutorialState>()((set) => ({
-  curTutorial: "get",
+  curTutorial: "GET Request",
   //   increasePopulation: () => set((state) => ({ bears: state.bears + 1 })),
   //   removeAllBears: () => set({ bears: 0 }),
   changeTutorial: (newTutorial) => set({ curTutorial: newTutorial }),

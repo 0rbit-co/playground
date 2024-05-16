@@ -6,20 +6,20 @@ const TypeButton = ({ btnName }: any) => {
   const tutorialClickHandler = () => {
     switch (btnName) {
       case "GET Request":
-        console.log("get");
-        setTut("get");
+        console.log("GET Request");
+        setTut("GET Request");
         break;
       case "POST Request":
-        console.log("post");
-        setTut("post");
+        console.log("POST Request");
+        setTut("POST Request");
         break;
       case "Pricefeed":
-        console.log("pf");
-        setTut("pf");
+        console.log("Pricefeed");
+        setTut("Pricefeed");
         break;
       case "Newsfeed":
-        console.log("nf");
-        setTut("nf");
+        console.log("Newsfeed");
+        setTut("Newsfeed");
         break;
       default:
         break;

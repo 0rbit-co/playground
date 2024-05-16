@@ -9,11 +9,11 @@ const TutRender = () => {
     console.log(currentTut);
   }, [currentTut]);
   return (
-    <div className="bg-[#121212] px-9 py-6 mt-6 rounded-xl min-h-fit">
-      {currentTut == "get" && <GETReq />}
-      {currentTut == "post" && <POSTReq />}
-      {currentTut == "pf" && <PriceFeed />}
-      {currentTut == "nf" && <NewsFeed />}
+    <div className="px-6 mx-[-12px] rounded-md min-h-fit leading-6">
+      {currentTut == "GET Request" && <GETReq />}
+      {/* {currentTut == "post" && <POSTReq />} */}
+      {currentTut == "Pricefeed" && <PriceFeed />}
+      {currentTut == "Newsfeed" && <NewsFeed />}
     </div>
   );
 };

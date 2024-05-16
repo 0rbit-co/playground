@@ -5,7 +5,6 @@ import PrismLoader from "./PrismLoader";
 import Header from "./Header";
 import InfoStatic from "./InfoStatic";
 import POSTReq from "./_tutorials/POSTReq";
-import Tabs from "./Tabs";
 import PriceFeed from "./_tutorials/PriceFeed";
 import NewsFeed from "./_tutorials/NewsFeed";
 import TutRender from "./_tutorials/TutRender";
@@ -17,7 +16,6 @@ export {
   Header,
   InfoStatic,
   POSTReq,
-  Tabs,
   PriceFeed,
   NewsFeed,
   TutRender,

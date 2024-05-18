@@ -58,11 +58,13 @@ const Header = () => {
           Checkout our <span className={`text-[#D16D1B]`}>AO playground</span>{" "}
           👀 by betterIDEa . You can use the code tutorials and test them on aos
           directly here. For more info, check out our{" "}
-          <span
-            className={`${brandSecondaryBg} ${brandLightText} px-[12px] py-[1px] rounded-md text-[24px]`}
+          <a
+            href="https://docs.0rbit.co/"
+            className={`${brandSecondaryBg} ${brandLightText} px-[12px] py-[1px] rounded-md text-[24px]
+            hover:cursor-pointer hover:bg-[#ce7d3b] hover:underline`}
           >
             Docs
-          </span>
+          </a>
         </h2>
       </div>
     </>

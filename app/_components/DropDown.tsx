@@ -32,7 +32,7 @@ const DropDown = () => {
     setDropdown(false);
   };
   return (
-    <div>
+    <div className="h-[15px] w-full flex -center justify-start px-20">
       <ul
         onMouseEnter={() => {
           setDropdown(true);
@@ -40,7 +40,7 @@ const DropDown = () => {
         onMouseLeave={() => {
           setDropdown(false);
         }}
-        className={` overflow-clip rounded-md w-[180px] `}
+        className={` overflow-clip rounded-md w-[180px] fixed`}
       >
         <li
           className={`flex flex-row justify-between items-center hover:tracking-widest hover:cursor-pointer
@@ -56,7 +56,7 @@ const DropDown = () => {
                 onClick={() => {
                   tutorialClickHandler("GET Request");
                 }}
-                className={`hover:tracking-widest hover:cursor-pointer ${brandSecondaryBg} ${brandDarkText} px-[12px] py-[6px] hover:opacity-75`}
+                className={`hover:tracking-widest hover:cursor-pointer ${brandSecondaryBg} ${brandDarkText} px-[12px] py-[6px] hover:bg-[#e8ab79]`}
               >
                 GET Request
               </li>
@@ -68,7 +68,7 @@ const DropDown = () => {
                 onClick={() => {
                   tutorialClickHandler("Pricefeed");
                 }}
-                className={`hover:tracking-widest hover:cursor-pointer ${brandSecondaryBg} ${brandDarkText} px-[12px] py-[6px] hover:opacity-75`}
+                className={`hover:tracking-widest hover:cursor-pointer ${brandSecondaryBg} ${brandDarkText} px-[12px] py-[6px] hover:bg-[#e8ab79]`}
               >
                 Pricefeed
               </li>
@@ -80,7 +80,7 @@ const DropDown = () => {
                 onClick={() => {
                   tutorialClickHandler("Newsfeed");
                 }}
-                className={`hover:tracking-widest hover:cursor-pointer ${brandSecondaryBg} ${brandDarkText} px-[12px] py-[6px] hover:opacity-75`}
+                className={`hover:tracking-widest hover:cursor-pointer ${brandSecondaryBg} ${brandDarkText} px-[12px] py-[6px] hover:bg-[#e8ab79]`}
               >
                 Newsfeed
               </li>

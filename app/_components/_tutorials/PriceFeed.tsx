@@ -1,6 +1,8 @@
 import React from "react";
 import { PrismLoader } from "../";
 import { useCodeStore } from "@/app/_store/store";
+import CodeBlock from "./CodeBlock";
+import { brandSecondaryBg } from "@/app/_utils/colors";
 
 const PriceFeed = () => {
   // const step1 =
@@ -36,20 +38,17 @@ const PriceFeed = () => {
         <p className="text-[12px]">
           (for 0rbit's Process Id, api URL and to store incoming Data)
         </p>
-        <div className="flex flex-row items-center justify-center gap-3 min-w-full">
-          <pre className="language-js flex flex-row justify-between items-center !bg-[#61625F]">
-            <code className="language-js">{step1}</code>
-            <PrismLoader />
-          </pre>
+        <div className="flex flex-col items-center justify-center gap-[6px] min-w-full">
+          <CodeBlock step={step1} />
           <div
             onClick={() => {
               tryItHandler(step1);
             }}
-            className="bg-[#212121] px-4 py-[3px] rounded-md 
-          text-center text-[13.5px] 
-          flex items-center justify-center 
-          h-fit min-w-fit
-          hover:text-[15px] hover:cursor-pointer"
+            className={`${brandSecondaryBg} px-3 py-[1.5px] rounded-md 
+            text-center text-[13.5px] font-medium
+            flex items-center justify-center self-end
+            h-fit min-w-fit
+            hover:text-[15px] hover:cursor-pointer`}
           >
             Try It!
           </div>
@@ -60,21 +59,18 @@ const PriceFeed = () => {
           {"> "}Step 2: Token Prices, Requested Tokens and Logging
           Initialization
         </h4>
-        <div className="flex flex-row items-center gap-3 min-w-full">
-          <pre className="language-lua w-full !bg-[#61625F]">
-            <code className="language-lua">{step2}</code>
-            <PrismLoader />
-          </pre>
+        <div className="flex flex-col items-center gap-[6px] min-w-full">
+          <CodeBlock step={step2} />
           <div
             onClick={() => {
               // setCode(assignVar);
               tryItHandler(step2);
             }}
-            className="bg-[#212121] px-4 py-[3px] rounded-md 
-text-center text-[13.5px] 
-flex items-center justify-center 
-h-fit min-w-fit
-hover:text-[15px] hover:cursor-pointer"
+            className={`${brandSecondaryBg} px-3 py-[1.5px] rounded-md 
+            text-center text-[13.5px] font-medium
+            flex items-center justify-center self-end
+            h-fit min-w-fit
+            hover:text-[15px] hover:cursor-pointer`}
           >
             Try It!
           </div>
@@ -84,59 +80,49 @@ hover:text-[15px] hover:cursor-pointer"
         <h4 className="font-semibold text-[18px]">
           {"> "}Step 2: Token Addition Handler
         </h4>
-        <div className="flex flex-row items-center gap-3 min-w-full">
-          <pre className="language-lua w-full !bg-[#61625F]">
-            <code className="language-lua">{step31}</code>
-            <PrismLoader />
-          </pre>
+        <div className="flex flex-col items-center gap-[6px] min-w-full">
+          <CodeBlock step={step31} />
           <div
             onClick={() => {
               // setCode(assignVar);
               tryItHandler(step31);
             }}
-            className="bg-[#212121] px-4 py-[3px] rounded-md 
-text-center text-[13.5px] 
-flex items-center justify-center 
-h-fit min-w-fit
-hover:text-[15px] hover:cursor-pointer"
+            className={`${brandSecondaryBg} px-3 py-[1.5px] rounded-md 
+            text-center text-[13.5px] font-medium
+            flex items-center justify-center self-end
+            h-fit min-w-fit
+            hover:text-[15px] hover:cursor-pointer`}
           >
             Try It!
           </div>
         </div>
-        <div className="flex flex-row items-center gap-3 min-w-full">
-          <pre className="language-lua w-full !bg-[#61625F]">
-            <code className="language-lua">{step32}</code>
-            <PrismLoader />
-          </pre>
+        <div className="flex flex-col items-center gap-[6px] min-w-full">
+          <CodeBlock step={step32} />
           <div
             onClick={() => {
-              // setCode(assignVar);
               tryItHandler(step32);
             }}
-            className="bg-[#212121] px-4 py-[3px] rounded-md 
-text-center text-[13.5px] 
-flex items-center justify-center 
-h-fit min-w-fit
-hover:text-[15px] hover:cursor-pointer"
+            className={`${brandSecondaryBg} px-3 py-[1.5px] rounded-md 
+            text-center text-[13.5px] font-medium
+            flex items-center justify-center self-end
+            h-fit min-w-fit
+            hover:text-[15px] hover:cursor-pointer`}
           >
             Try It!
           </div>
         </div>
-        <div className="flex flex-row items-center gap-3 min-w-full">
-          <pre className="language-lua w-full !bg-[#61625F]">
-            <code className="language-lua">{step33}</code>
-            <PrismLoader />
-          </pre>
+        <div className="flex flex-col items-center gap-[6px] min-w-full">
+          <CodeBlock step={step33} />
           <div
             onClick={() => {
               // setCode(assignVar);
               tryItHandler(step33);
             }}
-            className="bg-[#212121] px-4 py-[3px] rounded-md 
-text-center text-[13.5px] 
-flex items-center justify-center 
-h-fit min-w-fit
-hover:text-[15px] hover:cursor-pointer"
+            className={`${brandSecondaryBg} px-3 py-[1.5px] rounded-md 
+            text-center text-[13.5px] font-medium
+            flex items-center justify-center self-end
+            h-fit min-w-fit
+            hover:text-[15px] hover:cursor-pointer`}
           >
             Try It!
           </div>
@@ -146,20 +132,17 @@ hover:text-[15px] hover:cursor-pointer"
         <h4 className="font-semibold text-[18px]">
           {"> "}Step 4: Check the Token Price
         </h4>
-        <div className="flex flex-row items-center gap-3 min-w-full">
-          <pre className="language-lua w-full !bg-[#61625F]">
-            <code className="language-lua">{step4}</code>
-            <PrismLoader />
-          </pre>
+        <div className="flex flex-col items-center gap-[6px] min-w-full">
+          <CodeBlock step={step4} />
           <div
             onClick={() => {
               tryItHandler(step4);
             }}
-            className="bg-[#212121] px-4 py-[3px] rounded-md 
-text-center text-[13.5px] 
-flex items-center justify-center 
-h-fit min-w-fit
-hover:text-[15px] hover:cursor-pointer"
+            className={`${brandSecondaryBg} px-3 py-[1.5px] rounded-md 
+            text-center text-[13.5px] font-medium
+            flex items-center justify-center self-end
+            h-fit min-w-fit
+            hover:text-[15px] hover:cursor-pointer`}
           >
             Try It!
           </div>

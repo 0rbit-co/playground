@@ -33,10 +33,6 @@ const GETReq = () => {
           (for 0rbit's Process Id, api URL and to store incoming Data)
         </p>
         <div className="flex flex-col justify-center gap-[6px] min-w-full">
-          {/* <pre className="language-js flex flex-row justify-between items-center !bg-[#61625F]">
-            <code className="language-js">{step1}</code>
-            <PrismLoader />
-          </pre> */}
           <CodeBlock step={step1} />
           <div
             onClick={() => {
@@ -53,34 +49,6 @@ const GETReq = () => {
           </div>
         </div>
       </div>
-      {/* <div>
-        <h4 className="font-extralight text-[18px] ml-[6px] mb-[6px]">
-          {"> "}Step 2: Create a Get request
-        </h4>
-        <div className="flex flex-row items-center gap-3 min-w-full">
-          <pre className="language-lua w-full">
-            <code className="language-lua">{getRealData}</code>
-            <PrismLoader />
-          </pre>
-          <div
-            onClick={() => {
-              // setCode(assignVar);
-              tryItHandler(getRealData);
-            }}
-            className="bg-[#212121] px-4 py-[1.5px] rounded-md 
-          text-center text-[13.5px] 
-          flex items-center justify-center 
-          h-fit min-w-fit
-          hover:text-[15px] hover:cursor-pointer"
-          >
-            Try It!
-          </div>
-        </div>
-        <h6 className="mb-6">
-          This will create a Get request and send it to the 0rbit's GET ao
-          process.
-        </h6>
-      </div> */}
       {/* 2 HANDLERS */}
       <div className="flex flex-col gap-2">
         <h4 className="font-semibold text-[18px]">
@@ -88,10 +56,7 @@ const GETReq = () => {
         </h4>
         <p className="text-[12px]">(Sponsored Get Request Handler)</p>
         <div className="flex flex-col items-center gap-[6px] min-w-full">
-          <pre className="language-lua w-full !bg-[#61625F]">
-            <code className="language-lua">{step2}</code>
-            <PrismLoader />
-          </pre>
+          <CodeBlock step={step2} />
           <div
             onClick={() => {
               // setCode(assignVar);
@@ -108,10 +73,7 @@ const GETReq = () => {
         </div>
         <p className="text-[12px]">(Receive Response Handler)</p>
         <div className="flex flex-col items-center gap-[6px] min-w-full">
-          <pre className="language-lua w-full !bg-[#61625F]">
-            <code className="language-lua">{step31}</code>
-            <PrismLoader />
-          </pre>
+          <CodeBlock step={step31} />
           <div
             onClick={() => {
               // setCode(assignVar);
@@ -136,10 +98,11 @@ const GETReq = () => {
           Call the handler, who will create a request for the 0rbit process.
         </p>
         <div className="flex flex-col items-center gap-[6px] min-w-full">
-          <pre className="language-lua w-full !bg-[#61625F]">
+          {/* <pre className="language-lua w-full !bg-[#61625F]">
             <code className="language-lua">{step32}</code>
             <PrismLoader />
-          </pre>
+          </pre> */}
+          <CodeBlock step={step32} />
           <div
             onClick={() => {
               // setCode(assignVar);
@@ -165,10 +128,11 @@ const GETReq = () => {
           following command:
         </p>
         <div className="flex flex-col items-center gap-[6px] min-w-full">
-          <pre className="language-lua w-full !bg-[#61625F]">
+          {/* <pre className="language-lua w-full !bg-[#61625F]">
             <code className="language-lua">{step4}</code>
             <PrismLoader />
-          </pre>
+          </pre> */}
+          <CodeBlock step={step4} />
           <div
             onClick={() => {
               // setCode(assignVar);

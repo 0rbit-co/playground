@@ -20,22 +20,22 @@ const comfortaa = Comfortaa({
 const Header = () => {
   return (
     <>
-      <header className="text-center top-0 flex flex-row items-center justify-between px-[36px] pt-3 w-full">
+      <header className="text-center top-0 flex flex-row items-center justify-between sm:px-[36px] px-[12px] pt-3 w-full">
         <div className="flex flex-row gap-3 items-center">
           <Image
             src="/logos/recLight.svg"
             width={60}
             height={60}
             alt="orbit 0rbit logo"
-            className="w-[81px] h-[54px]"
+            className="sm:w-[81px] sm:h-[54px] w-[60px] h-[45px]"
           />
           <h1
-            className={`text-[30px] ${brandDarkText} mb-[-9px] ${comfortaa.className}`}
+            className={`sm:text-[30px] text-[18px] ${brandDarkText} mb-[-9px] ${comfortaa.className}`}
           >
             playground
           </h1>
         </div>
-        <div className="flex flex-row gap-6 items-center justify-center">
+        <div className="flex flex-row sm:gap-6 gap-[12px] items-center justify-center">
           <Link href="https://twitter.com/0rbitco">
             <FaTwitter
               className={`${brandDarkText} hover:opacity-75 md:w-6 md:h-6 w-[15px] h-[15px]`}
@@ -53,8 +53,8 @@ const Header = () => {
           </Link>
         </div>
       </header>
-      <div className={`${brandDarkText} px-20 text-center`}>
-        <h2 className="text-[33px] font-medium leading-[36px]">
+      <div className={`${brandDarkText} lg:px-20 px-10 text-center  `}>
+        <h2 className="text-[33px] font-medium leading-[36px] lg:block hidden">
           Checkout our <span className={`text-[#D16D1B]`}>AO playground</span>{" "}
           👀 by betterIDEa . You can use the code tutorials and test them on aos
           directly here. For more info, check out our{" "}
@@ -65,6 +65,11 @@ const Header = () => {
           >
             Docs
           </a>
+        </h2>
+        <h2 className="lg:hidden block text-[24px] font-medium leading-[36px]">
+          {" "}
+          <span className={`text-[#D16D1B]`}>Playground</span> is supported in
+          Desktop view only.
         </h2>
       </div>
     </>

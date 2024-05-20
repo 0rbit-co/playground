@@ -76,7 +76,6 @@ const GETReq = () => {
           <CodeBlock step={step31} />
           <div
             onClick={() => {
-              // setCode(assignVar);
               tryItHandler(step31);
             }}
             className={`${brandSecondaryBg} px-3 py-[1.5px] rounded-md 
@@ -98,10 +97,6 @@ const GETReq = () => {
           Call the handler, who will create a request for the 0rbit process.
         </p>
         <div className="flex flex-col items-center gap-[6px] min-w-full">
-          {/* <pre className="language-lua w-full !bg-[#61625F]">
-            <code className="language-lua">{step32}</code>
-            <PrismLoader />
-          </pre> */}
           <CodeBlock step={step32} />
           <div
             onClick={() => {
@@ -128,10 +123,6 @@ const GETReq = () => {
           following command:
         </p>
         <div className="flex flex-col items-center gap-[6px] min-w-full">
-          {/* <pre className="language-lua w-full !bg-[#61625F]">
-            <code className="language-lua">{step4}</code>
-            <PrismLoader />
-          </pre> */}
           <CodeBlock step={step4} />
           <div
             onClick={() => {

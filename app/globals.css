@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+:root {
+  background: #e3e5de;
+}
+
 @font-face {
   font-family: "Regular"; /*Can be any text*/
   src: local("JetBrainsMonoRegular"),

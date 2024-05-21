@@ -20,7 +20,7 @@ const comfortaa = Comfortaa({
 const Header = () => {
   return (
     <>
-      <header className="text-center top-0 flex flex-row items-center justify-between sm:px-[36px] px-[12px] pt-3 w-full">
+      <header className="text-center top-0 flex flex-row items-center justify-center sm:px-[36px] px-[12px] pt-3 w-full">
         <div className="flex flex-row gap-3 items-center">
           <Image
             src="/logos/recLight.svg"
@@ -30,12 +30,12 @@ const Header = () => {
             className="sm:w-[81px] sm:h-[54px] w-[60px] h-[45px]"
           />
           <h1
-            className={`sm:text-[30px] text-[18px] ${brandDarkText} mb-[-9px] ${comfortaa.className}`}
+            className={`sm:text-[30px] text-[18px] ${brandDarkText} mb-[-15px] ${comfortaa.className}`}
           >
             playground
           </h1>
         </div>
-        <div className="flex flex-row sm:gap-6 gap-[12px] items-center justify-center">
+        {/* <div className="flex flex-row sm:gap-6 gap-[12px] items-center justify-center">
           <Link href="https://twitter.com/0rbitco">
             <FaTwitter
               className={`${brandDarkText} hover:opacity-75 md:w-6 md:h-6 w-[15px] h-[15px]`}
@@ -51,17 +51,17 @@ const Header = () => {
               className={`${brandDarkText} hover:opacity-75 md:w-6 md:h-6 w-[15px] h-[15px]`}
             />
           </Link>
-        </div>
+        </div> */}
       </header>
       <div className={`${brandDarkText} lg:px-20 px-10 text-center  `}>
         <h2 className="text-[33px] font-medium leading-[36px] lg:block hidden">
           Checkout our <span className={`text-[#D16D1B]`}>AO playground</span>{" "}
-          👀 by betterIDEa . You can use the code tutorials and test them on aos
-          directly here. For more info, check out our{" "}
+          👀. You can use the code tutorials and test them on aos directly here.
+          For more info, check out our{" "}
           <a
             href="https://docs.0rbit.co/"
             className={`${brandSecondaryBg} ${brandLightText} px-[12px] py-[1px] rounded-md text-[24px]
-            hover:cursor-pointer hover:bg-[#ce7d3b] hover:underline`}
+            hover:cursor-pointer hover:bg-[#ce7d3b] hover:underline shadow-[0.9px_0.9px_3px_0px_#25291C] hover:shadow-none`}
           >
             Docs
           </a>

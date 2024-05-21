@@ -2,12 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { FaDiscord, FaTwitter } from "react-icons/fa";
 import { TbBrandGithubFilled } from "react-icons/tb";
-import {
-  brandDarkBg,
-  brandDarkText,
-  brandSecondaryBg,
-  brandSecondaryText,
-} from "../_utils/colors";
+import { brandDarkBg, brandSecondaryText } from "../_utils/colors";
 
 const Footer = () => {
   return (
@@ -15,9 +10,9 @@ const Footer = () => {
       className={`flex flex-row items-center justify-between ${brandDarkBg} w-full py-[12px] sm:px-20 px-[12px]`}
     >
       <h3
-        className={`${brandSecondaryText} font-bold sm:text-[18px] text-[12px]`}
+        className={`${brandSecondaryText} font-bold sm:text-[18px] text-[12px] font-[Regular]`}
       >
-        &copy; 2024 0rbit
+        &copy; 2024 <span className="">0rbit</span>
       </h3>
       <div className="flex flex-row sm:gap-6 gap-[12px] items-center justify-center">
         <Link href="https://twitter.com/0rbitco">

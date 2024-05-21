@@ -1,15 +1,12 @@
 import PrismLoader from "../PrismLoader";
 import { useCodeStore } from "../../_store/store";
 import CodeBlock from "./CodeBlock";
-import { brandSecondaryBg } from "@/app/_utils/colors";
+import { brandSecondaryBg, brandSecondaryText } from "@/app/_utils/colors";
 
 const GETReq = () => {
   const setCurCode = useCodeStore((state) => state.changeCode);
-  // const assignVar = '_0RBIT= "WSXUI2JjYUldJ7CKq9wE1MGwXs-ldzlUlHOQszwQe0s"';
   const step1 =
     'local json = require("json")\n\n_0RBIT = "WSXUI2JjYUldJ7CKq9wE1MGwXs-ldzlUlHOQszwQe0s"\n\nBASE_URL = "https://dummyjson.com/products"\n\nReceivedData = ReceivedData or {}';
-  // const getRealData =
-  //   'Send({\n\tTarget = _0RBIT,\n\tAction = "Get-Real-Data",\n\tUrl = "https://dummyjson.com/products"\n\t})';
   const step2 =
     'Handlers.add(\n\t"Get-Request",\n\tHandlers.utils.hasMatchingTag("Action", "Sponsored-Get-Request"),\n\tfunction(msg)\n\t\tSend({\n\t\t\tTarget = _0RBIT,\n\t\t\tAction = "Get-Real-Data",\n\t\t\tUrl = BASE_URL\n\t\t})\n\t\tprint(Colors.green .. "You have sent a GET Request to the 0rbit process.")\n\tend\n)';
   const step31 =
@@ -21,7 +18,7 @@ const GETReq = () => {
     setCurCode(code);
   };
   return (
-    <div className="max-h-[48vh] overflow-scroll min-w-full flex flex-col gap-6 px-6">
+    <div className="max-h-[48vh] overflow-scroll min-w-full flex flex-col gap-6">
       {" "}
       {/* 1 VARS */}
       <div className="flex flex-col gap-2">
@@ -29,8 +26,20 @@ const GETReq = () => {
           {" "}
           {">"} Step 1: Create variables!
         </h4>
-        <p className="text-[12px]">
-          (for 0rbit's Process Id, api URL and to store incoming Data)
+        <p className={`text-[15px] ${brandSecondaryText}`}>
+          For <span className="font-[Regular] text-[13.5px]">0rbit's</span>{" "}
+          <span
+            className={`text-[13.5px] font-[Regular] bg-[#5A5A5A] rounded-md px-[3px] py-[1.5px] text-[#f1f1f1]`}
+          >
+            Process Id
+          </span>
+          ,{" "}
+          <span
+            className={`text-[13.5px] font-[Regular] bg-[#5A5A5A] rounded-md px-[3px] py-[1.5px] text-[#f1f1f1]`}
+          >
+            api URL
+          </span>{" "}
+          and to store incoming Data
         </p>
         <div className="flex flex-col justify-center gap-[6px] min-w-full">
           <CodeBlock step={step1} />
@@ -54,7 +63,10 @@ const GETReq = () => {
         <h4 className="font-semibold text-[18px]">
           {"> "}Step 2: Create Handlers
         </h4>
-        <p className="text-[12px]">(Sponsored Get Request Handler)</p>
+        <p className="text-[13.5px] leading-3 font-medium">
+          Sponsored Get Request Handler
+        </p>
+
         <div className="flex flex-col items-center gap-[6px] min-w-full">
           <CodeBlock step={step2} />
           <div
@@ -71,7 +83,24 @@ const GETReq = () => {
             Try It!
           </div>
         </div>
-        <p className="text-[12px]">(Receive Response Handler)</p>
+        <p className={`text-[15px] ${brandSecondaryText}`}>
+          Handler that will send{" "}
+          <span
+            className={`text-[13.5px] font-[Regular] bg-[#5A5A5A] rounded-md px-[3px] py-[1.5px] text-[#f1f1f1]`}
+          >
+            1 $0RBT
+          </span>{" "}
+          to the <span className="font-[Light]">0rbit</span> process and make
+          the GET request for the{" "}
+          <span
+            className={`text-[13.5px] font-[Regular] bg-[#5A5A5A] rounded-md px-[3px] py-[1.5px] text-[#f1f1f1]`}
+          >
+            BASE_URL
+          </span>
+        </p>
+        <p className="text-[13.5px] leading-3 font-medium mt-5">
+          Receive Response Handler
+        </p>
         <div className="flex flex-col items-center gap-[6px] min-w-full">
           <CodeBlock step={step31} />
           <div
@@ -87,14 +116,29 @@ const GETReq = () => {
             Try It!
           </div>
         </div>
+        <p className={`text-[15px] ${brandSecondaryText}`}>
+          Handler that will receive the data from the{" "}
+          <span
+            className={`text-[13.5px] font-[Regular] bg-[#5A5A5A] rounded-md px-[3px] py-[1.5px] text-[#f1f1f1]`}
+          >
+            0rbit
+          </span>{" "}
+          process and print it.
+        </p>
       </div>
       {/* 3 Call Handler*/}
       <div className="flex flex-col gap-2">
         <h4 className="font-semibold text-[18px]">
           {"> "}Step 3: Call the Handler
         </h4>
-        <p className="text-[12px]">
-          Call the handler, who will create a request for the 0rbit process.
+        <p className={`text-[15px] ${brandSecondaryText}`}>
+          Call the handler, who will create a request for the{" "}
+          <span
+            className={`text-[13.5px] font-[Regular] bg-[#5A5A5A] rounded-md px-[3px] py-[1.5px] text-[#f1f1f1]`}
+          >
+            0rbit
+          </span>{" "}
+          process.
         </p>
         <div className="flex flex-col items-center gap-[6px] min-w-full">
           <CodeBlock step={step32} />
@@ -118,9 +162,15 @@ const GETReq = () => {
         <h4 className="font-semibold text-[18px]">
           {"> "}Step 4: Check the Data
         </h4>
-        <p className="text-[12px]">
-          To check the data stored in the ReceivedData variable, run the
-          following command:
+        <p className="text-[12px]"></p>
+        <p className={`text-[15px] ${brandSecondaryText}`}>
+          To check the data stored in the{" "}
+          <span
+            className={`text-[13.5px] font-[Regular] bg-[#5A5A5A] rounded-md px-[3px] py-[1.5px] text-[#f1f1f1]`}
+          >
+            ReceivedData
+          </span>{" "}
+          variable, run the following command:
         </p>
         <div className="flex flex-col items-center gap-[6px] min-w-full">
           <CodeBlock step={step4} />
@@ -140,7 +190,8 @@ const GETReq = () => {
         </div>
       </div>
       <h6>
-        For this particular example, the response from the 0rbit will be a
+        For this particular example, the response from the{" "}
+        <span className="font-[Regular] text-[13.5px]">0rbit</span> will be a
         number of products.
       </h6>
     </div>

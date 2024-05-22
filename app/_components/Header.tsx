@@ -1,5 +1,6 @@
 import Image from "next/image";
 import {
+  brandDarkBorder,
   brandDarkText,
   brandLightText,
   brandSecondaryBg,
@@ -14,7 +15,7 @@ const comfortaa = Comfortaa({
 const Header = () => {
   return (
     <>
-      <header className="max-w-[1800px] text-center top-0 flex flex-row items-center justify-center sm:px-[36px] px-[12px] pt-3 w-full">
+      <header className="max-w-[1800px] text-center top-0 flex flex-row items-center lg:justify-between justify-center sm:px-[36px] px-[12px] pt-3 w-full">
         <div className="flex flex-row gap-3 items-center">
           <Image
             src="/logos/recLight.svg"
@@ -24,10 +25,26 @@ const Header = () => {
             className="sm:w-[81px] sm:h-[54px] w-[60px] h-[45px]"
           />
           <h1
-            className={`sm:text-[30px] text-[18px] ${brandDarkText} mb-[-15px] ${comfortaa.className}`}
+            className={`sm:text-[30px] text-[18px] ${brandDarkText} lg:mb-[-15px] mb-[-9px] ${comfortaa.className}`}
           >
             playground
           </h1>
+        </div>
+        <div className=" flex-row gap-3 lg:flex hidden">
+          <a
+            href="http://docs.0rbit.co"
+            className={`rounded-lg px-[24px] py-[3px] ${brandDarkBorder} ${brandDarkText} border-[1px]
+            hover:px-[21px] hover:tracking-widest hover:bg-[#d9decd]`}
+          >
+            Docs
+          </a>
+          <a
+            href="https://mirror.xyz/0x26B11B188E9E69b2426FD6111302E721F423020E"
+            className={`rounded-lg px-[24px] py-[3px] ${brandDarkBorder} ${brandDarkText} border-[1px]
+            hover:px-[21px] hover:tracking-widest hover:bg-[#d9decd]`}
+          >
+            Blogs
+          </a>
         </div>
       </header>
       <div

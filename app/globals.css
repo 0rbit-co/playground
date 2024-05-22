@@ -6,10 +6,10 @@
   transition: all 0.6s;
   box-sizing: border-box;
   scroll-behavior: smooth !important;
-  /* -ms-overflow-style: none;
-  scrollbar-width: none; */
-  scrollbar-width: 1px;
-  scrollbar-color: #f1f1f168 #f1f1f100;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  /* scrollbar-width: 1px;
+  scrollbar-color: #f1f1f168 #f1f1f100; */
 }
 .codeblock {
   scrollbar-width: none !important;

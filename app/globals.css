@@ -6,10 +6,14 @@
   transition: all 0.6s;
   box-sizing: border-box;
   scroll-behavior: smooth !important;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  /* -ms-overflow-style: none;
+  scrollbar-width: none; */
+  scrollbar-width: 1px;
+  scrollbar-color: #f1f1f168 #f1f1f100;
 }
-
+.codeblock {
+  scrollbar-width: none !important;
+}
 :root {
   background: #e3e5de;
 }
@@ -42,19 +46,4 @@
   font-family: "Thin"; /*Can be any text*/
   src: local("JetBrainsMonoThin"),
     url("./font/JetBrainsMono-Thin.ttf") format("truetype");
-}
-
-.codeblock {
-  scrollbar-width: none;
-}
-
-/* Hide scrollbar for Chrome, Safari and Opera */
-.example::-webkit-scrollbar {
-  display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-.example {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
 }

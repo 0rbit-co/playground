@@ -41,7 +41,7 @@ const GETReq = () => {
           </span>{" "}
           and to store incoming Data
         </p>
-        <div className="flex flex-col justify-center gap-[6px] min-w-full">
+        <div className="flex flex-col justify-center gap-[6px] min-w-full codeblock">
           <CodeBlock step={step1} />
           <div
             onClick={() => {

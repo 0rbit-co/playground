@@ -15,7 +15,7 @@ const comfortaa = Comfortaa({
 const Header = () => {
   return (
     <>
-      <header className="max-w-[1800px] text-center top-0 flex flex-row items-center lg:justify-between justify-center sm:px-[36px] px-[12px] pt-3 w-full">
+      <header className="max-w-[1800px] text-center top-0 flex flex-row items-center lg:justify-between justify-center sm:px-20 px-[12px] pt-3 w-full">
         <div className="flex flex-row gap-3 items-center">
           <Image
             src="/logos/recLight.svg"

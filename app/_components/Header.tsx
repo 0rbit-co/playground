@@ -1,15 +1,9 @@
 import Image from "next/image";
-import React from "react";
 import {
   brandDarkText,
   brandLightText,
   brandSecondaryBg,
-  brandSecondaryText,
 } from "../_utils/colors";
-import Link from "next/link";
-import { FaTwitter } from "react-icons/fa";
-import { TbBrandGithubFilled } from "react-icons/tb";
-import { FaDiscord } from "react-icons/fa";
 import { Comfortaa } from "next/font/google";
 
 const comfortaa = Comfortaa({
@@ -20,7 +14,7 @@ const comfortaa = Comfortaa({
 const Header = () => {
   return (
     <>
-      <header className="text-center top-0 flex flex-row items-center justify-center sm:px-[36px] px-[12px] pt-3 w-full">
+      <header className="max-w-[1800px] text-center top-0 flex flex-row items-center justify-center sm:px-[36px] px-[12px] pt-3 w-full">
         <div className="flex flex-row gap-3 items-center">
           <Image
             src="/logos/recLight.svg"
@@ -35,25 +29,10 @@ const Header = () => {
             playground
           </h1>
         </div>
-        {/* <div className="flex flex-row sm:gap-6 gap-[12px] items-center justify-center">
-          <Link href="https://twitter.com/0rbitco">
-            <FaTwitter
-              className={`${brandDarkText} hover:opacity-75 md:w-6 md:h-6 w-[15px] h-[15px]`}
-            />
-          </Link>
-          <Link href="https://discord.gg/JVSjqaKJgV">
-            <FaDiscord
-              className={`${brandDarkText} hover:opacity-75 md:w-6 md:h-6 w-[15px] h-[15px]`}
-            />
-          </Link>
-          <Link href="https://github.com/0rbit-co">
-            <TbBrandGithubFilled
-              className={`${brandDarkText} hover:opacity-75 md:w-6 md:h-6 w-[15px] h-[15px]`}
-            />
-          </Link>
-        </div> */}
       </header>
-      <div className={`${brandDarkText} lg:px-20 px-10 text-center  `}>
+      <div
+        className={`${brandDarkText} max-w-[1800px] lg:px-20 px-10 text-center  `}
+      >
         <h2 className="text-[33px] font-medium leading-[36px] lg:block hidden">
           Checkout our <span className={`text-[#D16D1B]`}>AO playground</span>{" "}
           👀. You can use the code tutorials and test them on aos directly here.

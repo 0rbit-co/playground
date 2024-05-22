@@ -32,7 +32,7 @@ const DropDown = () => {
     setDropdown(false);
   };
   return (
-    <div className="h-[15px] w-full justify-start px-20 lg:flex hidden">
+    <div className="h-[33px] w-full justify-start px-20 lg:flex hidden max-w-[1800px]">
       <ul
         onMouseEnter={() => {
           setDropdown(true);

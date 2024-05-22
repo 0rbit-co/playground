@@ -2,7 +2,6 @@
 import React from "react";
 import PrismLoader from "../PrismLoader";
 import { useCodeStore } from "../../_store/store";
-import InlineCode from "../InlineCode";
 
 const POSTReq = () => {
   const setCurCode = useCodeStore((state) => state.changeCode);
@@ -10,7 +9,6 @@ const POSTReq = () => {
   const getRealData =
     'local json = require("json")\nSend({\n\tTarget = _0RBIT,\n\tAction = "Post-Real-Data",\n\tUrl = "https://arweave.net/graphql",\n\tBody = json.encode({\n\t\tquery = [[\n\t\t\tquery {\n\t\t\t\ttransactions(\n\t\t\t\t\towners: ["vh-NTHVvlKZqRxc8LyyTNok65yQ55a_PJ1zWLb9G2JI"]\n\t\t\t\t) {\n\t\t\t\t\tedges{\n\t\t\t\t\t\tnode {id}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t]],\n\t\tvariables = {}\n\t})\n})';
   const inbox = "#Inbox";
-  // const [code, setCode] = useState("");
   const tryItHandler = (code: any) => {
     console.log(code);
     setCurCode(code);

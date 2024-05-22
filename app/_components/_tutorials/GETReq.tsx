@@ -18,7 +18,7 @@ const GETReq = () => {
     setCurCode(code);
   };
   return (
-    <div className="max-h-[48vh] overflow-scroll min-w-full flex flex-col gap-6">
+    <div className="max-h-[42vh] overflow-scroll min-w-full flex flex-col gap-6">
       {" "}
       {/* 1 VARS */}
       <div className="flex flex-col gap-2">
@@ -45,7 +45,6 @@ const GETReq = () => {
           <CodeBlock step={step1} />
           <div
             onClick={() => {
-              // setCode(step1);
               tryItHandler(step1);
             }}
             className={`${brandSecondaryBg} px-3 py-[1.5px] rounded-md 
@@ -71,7 +70,6 @@ const GETReq = () => {
           <CodeBlock step={step2} />
           <div
             onClick={() => {
-              // setCode(assignVar);
               tryItHandler(step2);
             }}
             className={`${brandSecondaryBg} px-3 py-[1.5px] rounded-md 
@@ -144,7 +142,6 @@ const GETReq = () => {
           <CodeBlock step={step32} />
           <div
             onClick={() => {
-              // setCode(assignVar);
               tryItHandler(step32);
             }}
             className={`${brandSecondaryBg} px-3 py-[1.5px] rounded-md 
@@ -176,7 +173,6 @@ const GETReq = () => {
           <CodeBlock step={step4} />
           <div
             onClick={() => {
-              // setCode(assignVar);
               tryItHandler(step4);
             }}
             className={`${brandSecondaryBg} px-3 py-[1.5px] rounded-md 

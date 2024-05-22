@@ -8,24 +8,10 @@ const BetterIDEa = () => {
   const [a, setA] = useState("//Enter Code Here...");
   useEffect(() => {
     console.log(encodeURI(curCode));
-    // setA(encodeURI(curCode));
     setA(curCode);
   }, [curCode]);
 
-  return (
-    // <iframe
-    //   className="w-[100%] px-[3px] min-h-[87vh] py-[6px] pb-[9px]"
-    //   src={`https://ide.betteridea.dev/?codeblock=${a}`}
-    // ></iframe>
-
-    // in your react app
-    <CodeCell
-      height="100%"
-      cellId="1" // any unique cell id
-      appName="BetterIDEa" // Your unique app name
-      code={a} // initial code (optional)
-    />
-  );
+  return <CodeCell height="100%" cellId="1" appName="Sandbox" code={a} />;
 };
 
 export default BetterIDEa;

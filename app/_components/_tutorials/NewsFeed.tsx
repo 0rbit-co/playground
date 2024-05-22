@@ -26,7 +26,7 @@ const NewsFeed = () => {
     setCurCode(code);
   };
   return (
-    <div className="max-h-[48vh] overflow-scroll min-w-full flex flex-col gap-6">
+    <div className="max-h-[42vh] overflow-scroll min-w-full flex flex-col gap-6">
       {" "}
       {/* step1 */}
       <div className="flex flex-col gap-2">

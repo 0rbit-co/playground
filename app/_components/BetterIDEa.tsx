@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useCodeStore } from "../_store/store";
-import { CodeCell, runCell } from "@betteridea/codecell";
+import { CodeCell, runCell, setCellCode } from "@betteridea/codecell";
 
 const BetterIDEa = () => {
   const curCode = useCodeStore((state) => state.curCode);
@@ -10,7 +10,9 @@ const BetterIDEa = () => {
 
   useEffect(() => {
     console.log(encodeURI(curCode));
-    setA(curCode);
+    // setA(curCode);
+    setCellCode("1", curCode);
+    console.log("heyy", curCode);
   }, [curCode]);
 
   useEffect(() => {
@@ -24,7 +26,7 @@ const BetterIDEa = () => {
     return null;
   }
 
-  return <CodeCell height="100%" cellId="1" appName="Sandbox" code={a} />;
+  return <CodeCell height="100%" cellId="1" appName="Sandbox" />;
 };
 
 export default BetterIDEa;

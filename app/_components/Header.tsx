@@ -62,11 +62,20 @@ const Header = () => {
             Docs
           </a>
         </h2>
-        <h2 className="lg:hidden block text-[24px] font-medium leading-[36px]">
-          {" "}
-          <span className={`text-[#D16D1B]`}>Playground</span> is supported in
-          Desktop view only.
-        </h2>
+        <div className="lg:hidden flex flex-col gap-3 items-center justify-center">
+          <Image
+            src="/mobView.svg"
+            height={150}
+            width={300}
+            alt="mob view"
+            className="mt-[-30px]"
+          />
+          <h2 className=" sm:text-[24px] text-[18px] font-medium sm:leading-[36px] leading-[24px]">
+            {" "}
+            <span className={`text-[#D16D1B]`}>Playground</span> is supported in
+            Desktop view only.
+          </h2>
+        </div>
       </div>
     </>
   );

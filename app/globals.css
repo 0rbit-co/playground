@@ -6,14 +6,35 @@
   transition: all 0.6s;
   box-sizing: border-box;
   scroll-behavior: smooth !important;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  /* scrollbar-width: 1px;
-  scrollbar-color: #f1f1f168 #f1f1f100; */
+  -ms-overflow-style: none; 
+  scrollbar-width: thin;
+  scrollbar-color: #eb8f44 transparent;
 }
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #eb8f44;
+  border-radius: 10px; 
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
 .codeblock {
-  scrollbar-width: none !important;
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
 }
+
+.codeblock::-webkit-scrollbar {
+  display: none; 
+}
+
 :root {
   background: #e3e5de;
 }

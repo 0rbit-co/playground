@@ -52,7 +52,7 @@ export default function RootLayout({
         </Script>
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/favicon.ico" />
-        <title>0rbit | Oracle on Arweave</title>
+        <title>0rbit | Playground</title>
         <meta
           name="description"
           content="Decentralized Oracle on Arweave ecosystem for accessing off-chain data. Get data from any URL."

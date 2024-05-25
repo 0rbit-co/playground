@@ -6,12 +6,12 @@ import { brandSecondaryBg, brandSecondaryText } from "@/app/_utils/colors";
 const GETReq = () => {
   const setCurCode = useCodeStore((state) => state.changeCode);
   const step1 =
-    'local json = require("json")\n\n_0RBIT = "WSXUI2JjYUldJ7CKq9wE1MGwXs-ldzlUlHOQszwQe0s"\n\nBASE_URL = "https://dummyjson.com/products"\n\nReceivedData = ReceivedData or {}';
+    'local json = require("json")\n\n_0RBIT = "WSXUI2JjYUldJ7CKq9wE1MGwXs-ldzlUlHOQszwQe0s"\n_0RBT_TOKEN = "BUhZLMwQ6yZHguLtJYA5lLUa9LQzLXMXRfaq9FVcPJc"\n\nBASE_URL = "https://dummyjson.com/products"\nFEE_AMOUNT = "1000000000000" -- 1 $0RBT\n\nReceivedData = ReceivedData or {}';
   const step2 =
-    'Handlers.add(\n\t"Get-Request",\n\tHandlers.utils.hasMatchingTag("Action", "Sponsored-Get-Request"),\n\tfunction(msg)\n\t\tSend({\n\t\t\tTarget = _0RBIT,\n\t\t\tAction = "Get-Real-Data",\n\t\t\tUrl = BASE_URL\n\t\t})\n\t\tprint(Colors.green .. "You have sent a GET Request to the 0rbit process.")\n\tend\n)';
+    'Handlers.add(\n\t"Get-Request",\n\tHandlers.utils.hasMatchingTag("Action", "First-Get-Request"),\n\tfunction(msg)\n\t\tSend({\n\t\t\tTarget = _0RBT_TOKEN,\n\t\t\tAction = "Transfer",\n\t\t\tRecipient = _0RBIT,\n\t\t\tQuantity = FEE_AMOUNT,\n\t\t\t["X-Url"] = BASE_URL,\n\t\t\t["X-Action"] = "Get-Real-Data"\n\t\t})\n\t\tprint(Colors.green .. "You have sent a GET Request to the 0rbit process.")\n\tend\n)';
   const step31 =
     'Handlers.add(\n\t"Receive-Data",\n\tHandlers.utils.hasMatchingTag("Action", "Receive-Response"),\n\tfunction(msg)\n\t\tlocal res = json.decode(msg.Data)\n\t\tReceivedData = res\n\t\tprint(Colors.green .. "You have received the data from the 0rbit process.")\n\tend\n)';
-  const step32 = 'Send({ Target= ao.id, Action="Sponsored-Get-Request" })';
+  const step32 = 'Send({ Target= ao.id, Action="First-Get-Request" })';
   const step4 = "ReceivedData";
   const tryItHandler = (code: any) => {
     console.log(code);
@@ -63,7 +63,7 @@ const GETReq = () => {
           {"> "}Step 2: Create Handlers
         </h4>
         <p className="text-[13.5px] leading-3 font-medium">
-          Sponsored Get Request Handler
+          Get Request Handler
         </p>
 
         <div className="flex flex-col items-center gap-[6px] min-w-full">

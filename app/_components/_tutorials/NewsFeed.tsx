@@ -6,7 +6,7 @@ import { brandSecondaryBg, brandSecondaryText } from "@/app/_utils/colors";
 
 const NewsFeed = () => {
   const step1 =
-    'local json = require("json")\n\n_0RBIT = "WSXUI2JjYUldJ7CKq9wE1MGwXs-ldzlUlHOQszwQe0s"\n_0RBT_TOKEN = "BUhZLMwQ6yZHguLtJYA5lLUa9LQzLXMXRfaq9FVcPJc"\n\nURL = "https://saurav.tech/NewsAPI/top-headlines/category/health/in.json"\nFEE_AMOUNT = "1000000000000" -- 1 $0RBT\nNEWS = NEWS or {}';
+    'local json = require("json")\n\n_0RBIT = "BaMK1dfayo75s3q1ow6AO64UDpD9SEFbeE8xYrY2fyQ"\n_0RBT_TOKEN = "BUhZLMwQ6yZHguLtJYA5lLUa9LQzLXMXRfaq9FVcPJc"\n\nURL = "https://saurav.tech/NewsAPI/top-headlines/category/health/in.json"\nFEE_AMOUNT = "1000000000000" -- 1 $0RBT\nNEWS = NEWS or {}';
 
   // const step2 =
   //   'TOKEN_PRICES = TOKEN_PRICES or {\n\tBTC = {\n\t\tcoingecko_id = "bitcoin",\n\t\tprice = 0,\n\t\tlast_update_timestamp = 0\n\t},\n\tETH = {\n\t\tcoingecko_id = "ethereum",\n\t\tprice = 0,\n\t\tlast_update_timestamp = 0\n\t},\n\tSOL = {\n\t\tcoingecko_id = "solana",\n\t\tprice = 0,\n\t\tlast_update_timestamp = 0\n\t}\n}\nID_TOKEN = ID_TOKEN or {\n\tbitcoin = "BTC",\n\tethereum = "ETH",\n\tsolana = "SOL"\n}\nLOGS = LOGS or {}';

@@ -24,7 +24,7 @@ export default function Home() {
       </div>
       <p
         className={`w-full text-right font-light text-[18px]
-      mt-[-15px] px-20 ${brandDarkText} lg:block hidden max-w-[1800px]`}
+      mt-[6px] mb-[-12px] px-20 ${brandDarkText} lg:block hidden max-w-[1800px]`}
       >
         Powered by betterIdeA
       </p>

@@ -53,24 +53,28 @@ const BetterIDEa = () => {
         className={`flex flex-row items-center justify-start gap-3 font-semibold text-[12px] ${brandLightText} my-[6px] ${brandSecondaryBg} px-[12px] py-[3px] rounded-sm`}
       >
         <h3> {curPid ? `Process ID:${curPid}  ` : "Please Connect"}</h3>
-        {curPid && copied ? (
-          <Image
-            alt="copy"
-            src="/clip1.png"
-            height={18}
-            width={18}
-            onClick={handleCopy}
-            className="hover:cursor-pointer w-[18px] h-[18px] hover:bg-[#7f512a] rounded-md"
-          />
+        {curPid ? (
+          copied ? (
+            <Image
+              alt="copy"
+              src="/clip1.png"
+              height={18}
+              width={18}
+              onClick={handleCopy}
+              className="hover:cursor-pointer w-[18px] h-[18px] hover:bg-[#7f512a] rounded-md"
+            />
+          ) : (
+            <Image
+              alt="copy"
+              src="/clip0.png"
+              height={18}
+              width={18}
+              onClick={handleCopy}
+              className="hover:cursor-pointer w-[18px] h-[18px] hover:bg-[#7f512a] rounded-md"
+            />
+          )
         ) : (
-          <Image
-            alt="copy"
-            src="/clip0.png"
-            height={18}
-            width={18}
-            onClick={handleCopy}
-            className="hover:cursor-pointer w-[18px] h-[18px] hover:bg-[#7f512a] rounded-md"
-          />
+          ""
         )}
       </div>
     </>

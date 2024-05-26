@@ -20,7 +20,6 @@ const BetterIDEa = () => {
     console.log(pid);
   };
   return (
-    // <section className="flex flex-col gap-1">
     <>
       <CodeCell
         height="100%"
@@ -31,10 +30,9 @@ const BetterIDEa = () => {
       <h3
         className={`font-semibold text-[12px] ${brandDarkText} my-[6px] ${brandSecondaryBg} px-[12px] py-[3px] rounded-sm`}
       >
-        Process ID: {curPid}
+        {curPid ? `Process ID:${curPid}` : "Please Connect"}
       </h3>
     </>
-    // </section>
   );
 };
 

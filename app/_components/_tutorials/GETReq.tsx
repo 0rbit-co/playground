@@ -6,11 +6,11 @@ import { brandSecondaryBg, brandSecondaryText } from "@/app/_utils/colors";
 const GETReq = () => {
   const setCurCode = useCodeStore((state) => state.changeCode);
   const step1 =
-    'local json = require("json")\n\n_0RBIT = "BaMK1dfayo75s3q1ow6AO64UDpD9SEFbeE8xYrY2fyQ"\n_0RBT_TOKEN = "BUhZLMwQ6yZHguLtJYA5lLUa9LQzLXMXRfaq9FVcPJc"\n\nBASE_URL = "https://dummyjson.com/products"\nFEE_AMOUNT = "1000000000000" -- 1 $0RBT\n\nReceivedData = ReceivedData or {}';
+    '_0RBIT = "BaMK1dfayo75s3q1ow6AO64UDpD9SEFbeE8xYrY2fyQ"\n_0RBT_TOKEN = "BUhZLMwQ6yZHguLtJYA5lLUa9LQzLXMXRfaq9FVcPJc"\n\nBASE_URL = "https://dummyjson.com/products"\nFEE_AMOUNT = "1000000000000" -- 1 $0RBT\n\nReceivedData = ReceivedData or {}';
   const step2 =
     'Handlers.add(\n\t"Get-Request",\n\tHandlers.utils.hasMatchingTag("Action", "First-Get-Request"),\n\tfunction(msg)\n\t\tSend({\n\t\t\tTarget = _0RBT_TOKEN,\n\t\t\tAction = "Transfer",\n\t\t\tRecipient = _0RBIT,\n\t\t\tQuantity = FEE_AMOUNT,\n\t\t\t["X-Url"] = BASE_URL,\n\t\t\t["X-Action"] = "Get-Real-Data"\n\t\t})\n\t\tprint(Colors.green .. "You have sent a GET Request to the 0rbit process.")\n\tend\n)';
   const step31 =
-    'Handlers.add(\n\t"Receive-Data",\n\tHandlers.utils.hasMatchingTag("Action", "Receive-Response"),\n\tfunction(msg)\n\t\tlocal res = json.decode(msg.Data)\n\t\tReceivedData = res\n\t\tprint(Colors.green .. "You have received the data from the 0rbit process.")\n\tend\n)';
+    'local json = require("json")\n\nHandlers.add(\n\t"Receive-Data",\n\tHandlers.utils.hasMatchingTag("Action", "Receive-Response"),\n\tfunction(msg)\n\t\tlocal res = json.decode(msg.Data)\n\t\tReceivedData = res\n\t\tprint(Colors.green .. "You have received the data from the 0rbit process.")\n\tend\n)';
   const step32 = 'Send({ Target= ao.id, Action="First-Get-Request" })';
   const step4 = "ReceivedData";
   const tryItHandler = (code: any) => {

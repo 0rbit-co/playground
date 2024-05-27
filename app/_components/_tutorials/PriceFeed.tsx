@@ -6,7 +6,7 @@ import { brandSecondaryBg, brandSecondaryText } from "@/app/_utils/colors";
 
 const PriceFeed = () => {
   const step1 =
-    'local json = require("json")\n\n_0RBIT = "BaMK1dfayo75s3q1ow6AO64UDpD9SEFbeE8xYrY2fyQ"\n_0RBT_TOKEN = "BUhZLMwQ6yZHguLtJYA5lLUa9LQzLXMXRfaq9FVcPJc"\n\nBASE_URL = "https://api.coingecko.com/api/v3/simple/price"\nFEE_AMOUNT = "1000000000000" -- 1 $0RBT';
+    '_0RBIT = "BaMK1dfayo75s3q1ow6AO64UDpD9SEFbeE8xYrY2fyQ"\n_0RBT_TOKEN = "BUhZLMwQ6yZHguLtJYA5lLUa9LQzLXMXRfaq9FVcPJc"\n\nBASE_URL = "https://api.coingecko.com/api/v3/simple/price"\nFEE_AMOUNT = "1000000000000" -- 1 $0RBT';
   const step2 =
     'TOKEN_PRICES = TOKEN_PRICES or {\n\tBTC = {\n\t\tcoingecko_id = "bitcoin",\n\t\tprice = 0,\n\t\tlast_update_timestamp = 0\n\t},\n\tETH = {\n\t\tcoingecko_id = "ethereum",\n\t\tprice = 0,\n\t\tlast_update_timestamp = 0\n\t},\n\tSOL = {\n\t\tcoingecko_id = "solana",\n\t\tprice = 0,\n\t\tlast_update_timestamp = 0\n\t}\n}\nID_TOKEN = ID_TOKEN or {\n\tbitcoin = "BTC",\n\tethereum = "ETH",\n\tsolana = "SOL"\n}\nLOGS = LOGS or {}';
   const step31 =
@@ -14,7 +14,7 @@ const PriceFeed = () => {
   const step32 =
     'Handlers.add(\n\t"FetchPrice",\n\tHandlers.utils.hasMatchingTag("Action", "Fetch-Price"),\n\tfunction()\n\t\tlocal url;\n\t\tlocal token_ids;\n\t\tfor _, v in pairs(TOKEN_PRICES) do\n\t\t\ttoken_ids = token_ids .. v.coingecko_id .. ","\n\t\tend\n\t\turl = BASE_URL .. "?ids=" .. token_ids .. "&vs_currencies=usd"\n\t\tSend({\n\t\t\tTarget = _0RBT_TOKEN,\n\t\t\tAction = "Transfer",\n\t\t\tRecipient = _0RBIT,\n\t\t\tQuantity = FEE_AMOUNT,\n\t\t\t["X-Url"] = url,\n\t\t\t["X-Action"] = "Get-Real-Data"\n\t\t})\n\t\tprint(Colors.green .. "GET Request sent to the 0rbit process.")\n\tend\n)';
   const step33 =
-    'Handlers.add(\n\t"ReceiveData",\n\tHandlers.utils.hasMatchingTag("Action", "Receive-Response"), \n\tfunction(msg)\n\t\tlocal res = json.decode(msg.Data)\n\t\tfor k, v in pairs(res) do\n\t\t\tTOKEN_PRICES[ID_TOKEN[k]].price = tonumber(v.usd)\n\t\t\tTOKEN_PRICES[ID_TOKEN[k]].last_update_timestamp = msg.Timestamp\n\t\tend\n\tend\n)';
+    'local json = require("json")\n\nHandlers.add(\n\t"ReceiveData",\n\tHandlers.utils.hasMatchingTag("Action", "Receive-Response"), \n\tfunction(msg)\n\t\tlocal res = json.decode(msg.Data)\n\t\tfor k, v in pairs(res) do\n\t\t\tTOKEN_PRICES[ID_TOKEN[k]].price = tonumber(v.usd)\n\t\t\tTOKEN_PRICES[ID_TOKEN[k]].last_update_timestamp = msg.Timestamp\n\t\tend\n\tend\n)';
   const step4 =
     'Send({Target="BUhZLMwQ6yZHguLtJYA5lLUa9LQzLXMXRfaq9FVcPJc", Action="Balance"})';
   const step5 = 'Send({ Target = ao.id, Action="Fetch-Price"})';

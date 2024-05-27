@@ -91,7 +91,7 @@ const NewsFeed = () => {
       {/* step3 */}
       <div className="flex flex-col gap-2">
         <h4 className="font-semibold text-[18px]">
-          {"> "}Step 3: Create Handlers
+          {"> "}Step 2: Create Handlers
         </h4>
         {/* step 31 */}
         <p className="text-[13.5px] leading-3 font-medium">Get News Handler</p>
@@ -202,7 +202,7 @@ const NewsFeed = () => {
       {/* step4 */}
       <div className="flex flex-col gap-2">
         <h4 className="font-semibold text-[18px]">
-          {"> "}Step 4: Fund your process
+          {"> "}Step 3: Fund your process
         </h4>
         <p className={`text-[15px] ${brandSecondaryText}`}>
           Transfer some{" "}
@@ -230,7 +230,7 @@ const NewsFeed = () => {
       {/* step5 */}
       <div className="flex flex-col gap-2">
         <h4 className="font-semibold text-[18px]">
-          {"> "}Step 5: Fetch the Token Prices
+          {"> "}Step 4: Fetch the News
         </h4>
         <div className="flex flex-col items-center gap-[6px] min-w-full">
           <CodeBlock step={step5} />
@@ -251,7 +251,7 @@ const NewsFeed = () => {
       {/* step6 */}
       <div className="flex flex-col gap-2">
         <h4 className="font-semibold text-[18px]">
-          {"> "}Step 6: Check the Token Price
+          {"> "}Step 5: Check the News
         </h4>
         <div className="flex flex-col items-center gap-[6px] min-w-full">
           <CodeBlock step={step6} />

@@ -10,7 +10,7 @@ const GETReq = () => {
   const step2 =
     'Handlers.add(\n\t"Get-Request",\n\tHandlers.utils.hasMatchingTag("Action", "First-Get-Request"),\n\tfunction(msg)\n\t\tSend({\n\t\t\tTarget = _0RBT_TOKEN,\n\t\t\tAction = "Transfer",\n\t\t\tRecipient = _0RBIT,\n\t\t\tQuantity = FEE_AMOUNT,\n\t\t\t["X-Url"] = BASE_URL,\n\t\t\t["X-Action"] = "Get-Real-Data"\n\t\t})\n\t\tprint(Colors.green .. "You have sent a GET Request to the 0rbit process.")\n\tend\n)';
   const step31 =
-    'local json = require("json")\n\nHandlers.add(\n\t"Receive-Data",\n\tHandlers.utils.hasMatchingTag("Action", "Receive-Response"),\n\tfunction(msg)\n\t\tlocal res = json.decode(msg.Data)\n\t\tReceivedData = res\n\t\tprint(Colors.green .. "You have received the data from the 0rbit process.")\n\tend\n)';
+    'local json = require("json")\n\nHandlers.add(\n\t"ReceiveData",\n\tHandlers.utils.hasMatchingTag("Action", "Receive-Response"),\n\tfunction(msg)\n\t\tlocal res = json.decode(msg.Data)\n\t\tReceivedData = res\n\t\tprint(Colors.green .. "You have received the data from the 0rbit process.")\n\tend\n)';
   const step32 = 'Send({ Target= ao.id, Action="First-Get-Request" })';
   const step4 = "ReceivedData";
   const tryItHandler = (code: any) => {

@@ -2,7 +2,12 @@ import React from "react";
 import { PrismLoader } from "../";
 import { useCodeStore } from "@/app/_store/store";
 import CodeBlock from "./CodeBlock";
-import { brandSecondaryBg, brandSecondaryText } from "@/app/_utils/colors";
+import {
+  brandSecondaryBg,
+  brandSecondaryBorder,
+  brandSecondaryText,
+} from "@/app/_utils/colors";
+import Image from "next/image";
 
 const NewsFeed = () => {
   const step1 =
@@ -20,6 +25,7 @@ const NewsFeed = () => {
     'Send({Target="BUhZLMwQ6yZHguLtJYA5lLUa9LQzLXMXRfaq9FVcPJc", Action="Balance"})';
   const step4 = 'Send({ Target = ao.id, Action="Fetch-News"})';
   const step5 = "NEWS";
+  const checkInbox = "Inbox[#Inbox].Data";
   const setCurCode = useCodeStore((state) => state.changeCode);
   const tryItHandler = (code: any) => {
     console.log(code);
@@ -28,6 +34,32 @@ const NewsFeed = () => {
   return (
     <div className="max-h-[42vh] overflow-scroll min-w-full flex flex-col gap-6">
       {" "}
+      <div
+        className={`${brandSecondaryBorder} border-[1px] px-[12px] py-[3px] rounded-lg bg-[#eb8f4479]
+        flex flex-row gap-2 text-[13.5px]`}
+      >
+        {/* <Image src="/warn.jpg" alt="" height={30} width={30} /> */}
+        <h2>
+          Make sure the Process ID displayed on the right has atleast 1{" "}
+          <span className=" font-[Regular]">$0RBT</span>. You can swap{" "}
+          <span className=" font-[Regular]">$0RBT</span> on{" "}
+          <a
+            href="https://app.permaswap.network/AOCRED-0RBT"
+            className="underline hover:underline-offset-[3px]"
+          >
+            Permaswap here
+          </a>
+          . Learn how to add <span className=" font-[Regular]">$0RBT</span> to
+          your wallet{" "}
+          <a
+            href="https://docs.0rbit.co/protocol/token/add-to-wallet"
+            className="underline hover:underline-offset-[3px]"
+          >
+            here
+          </a>
+          .
+        </h2>
+      </div>
       {/* step1 */}
       <div className="flex flex-col gap-2">
         <h4 className="font-semibold text-[18px]">
@@ -203,6 +235,25 @@ const NewsFeed = () => {
             Try It!
           </div>
         </div>
+        <p className={`text-[15px] ${brandSecondaryText}`}>
+          Wait a few seconds for the response and check your inbox using the
+          below command to see your balance.
+        </p>
+        <div className="flex flex-col items-center gap-[6px] min-w-full">
+          <CodeBlock step={checkInbox} />
+          <div
+            onClick={() => {
+              tryItHandler(checkInbox);
+            }}
+            className={`${brandSecondaryBg} px-3 py-[1.5px] rounded-md 
+            text-center text-[13.5px] font-medium
+            flex items-center justify-center self-end
+            h-fit min-w-fit
+            hover:text-[15px] hover:cursor-pointer`}
+          >
+            Try It!
+          </div>
+        </div>
       </div>
       {/* step5 */}
       <div className="flex flex-col gap-2">
@@ -230,6 +281,10 @@ const NewsFeed = () => {
         <h4 className="font-semibold text-[18px]">
           {"> "}Step 5: Check the News
         </h4>
+        <p className="text-[12px]">
+          Make sure to wait 6-9 seconds for the response before executing below
+          command.
+        </p>
         <div className="flex flex-col items-center gap-[6px] min-w-full">
           <CodeBlock step={step5} />
           <div

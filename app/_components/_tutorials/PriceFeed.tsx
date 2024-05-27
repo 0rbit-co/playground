@@ -2,7 +2,12 @@ import React from "react";
 import { PrismLoader } from "../";
 import { useCodeStore } from "@/app/_store/store";
 import CodeBlock from "./CodeBlock";
-import { brandSecondaryBg, brandSecondaryText } from "@/app/_utils/colors";
+import {
+  brandSecondaryBg,
+  brandSecondaryBorder,
+  brandSecondaryText,
+} from "@/app/_utils/colors";
+import Image from "next/image";
 
 const PriceFeed = () => {
   const step1 =
@@ -15,6 +20,7 @@ const PriceFeed = () => {
     'Handlers.add(\n\t"FetchPrice",\n\tHandlers.utils.hasMatchingTag("Action", "Fetch-Price"),\n\tfunction()\n\t\tlocal url;\n\t\tlocal token_ids="";\n\t\tfor _, v in pairs(TOKEN_PRICES) do\n\t\t\ttoken_ids = token_ids .. v.coingecko_id .. ","\n\t\tend\n\t\turl = BASE_URL .. "?ids=" .. token_ids .. "&vs_currencies=usd"\n\t\tSend({\n\t\t\tTarget = _0RBT_TOKEN,\n\t\t\tAction = "Transfer",\n\t\t\tRecipient = _0RBIT,\n\t\t\tQuantity = FEE_AMOUNT,\n\t\t\t["X-Url"] = url,\n\t\t\t["X-Action"] = "Get-Real-Data"\n\t\t})\n\t\tprint(Colors.green .. "GET Request sent to the 0rbit process.")\n\tend\n)';
   const step33 =
     'local json = require("json")\n\nHandlers.add(\n\t"ReceiveData",\n\tHandlers.utils.hasMatchingTag("Action", "Receive-Response"), \n\tfunction(msg)\n\t\tlocal res = json.decode(msg.Data)\n\t\tfor k, v in pairs(res) do\n\t\t\tTOKEN_PRICES[ID_TOKEN[k]].price = tonumber(v.usd)\n\t\t\tTOKEN_PRICES[ID_TOKEN[k]].last_update_timestamp = msg.Timestamp\n\t\tend\n\tend\n)';
+  const checkInbox = "Inbox[#Inbox].Data";
   const step4 =
     'Send({Target="BUhZLMwQ6yZHguLtJYA5lLUa9LQzLXMXRfaq9FVcPJc", Action="Balance"})';
   const step5 = 'Send({ Target = ao.id, Action="Fetch-Price"})';
@@ -28,6 +34,32 @@ const PriceFeed = () => {
   return (
     <div className="max-h-[42vh] overflow-scroll min-w-full flex flex-col gap-6">
       {" "}
+      <div
+        className={`${brandSecondaryBorder} border-[1px] px-[12px] py-[3px] rounded-lg bg-[#eb8f4479]
+        flex flex-row gap-2 text-[13.5px]`}
+      >
+        {/* <Image src="/warn.jpg" alt="" height={30} width={30} /> */}
+        <h2>
+          Make sure the Process ID displayed on the right has atleast 1{" "}
+          <span className=" font-[Regular]">$0RBT</span>. You can swap{" "}
+          <span className=" font-[Regular]">$0RBT</span> on{" "}
+          <a
+            href="https://app.permaswap.network/AOCRED-0RBT"
+            className="underline hover:underline-offset-[3px]"
+          >
+            Permaswap here
+          </a>
+          . Learn how to add <span className=" font-[Regular]">$0RBT</span> to
+          your wallet{" "}
+          <a
+            href="https://docs.0rbit.co/protocol/token/add-to-wallet"
+            className="underline hover:underline-offset-[3px]"
+          >
+            here
+          </a>
+          .
+        </h2>
+      </div>
       {/* step1 */}
       <div className="flex flex-col gap-2">
         <h4 className="font-semibold text-[18px]">
@@ -223,6 +255,25 @@ const PriceFeed = () => {
             Try It!
           </div>
         </div>
+        <p className={`text-[15px] ${brandSecondaryText}`}>
+          Wait a few seconds for the response and check your inbox using the
+          below command to see your balance.
+        </p>
+        <div className="flex flex-col items-center gap-[6px] min-w-full">
+          <CodeBlock step={checkInbox} />
+          <div
+            onClick={() => {
+              tryItHandler(checkInbox);
+            }}
+            className={`${brandSecondaryBg} px-3 py-[1.5px] rounded-md 
+            text-center text-[13.5px] font-medium
+            flex items-center justify-center self-end
+            h-fit min-w-fit
+            hover:text-[15px] hover:cursor-pointer`}
+          >
+            Try It!
+          </div>
+        </div>
       </div>
       {/* step5 */}
       <div className="flex flex-col gap-2">
@@ -255,6 +306,25 @@ const PriceFeed = () => {
           <div
             onClick={() => {
               tryItHandler(step6);
+            }}
+            className={`${brandSecondaryBg} px-3 py-[1.5px] rounded-md 
+            text-center text-[13.5px] font-medium
+            flex items-center justify-center self-end
+            h-fit min-w-fit
+            hover:text-[15px] hover:cursor-pointer`}
+          >
+            Try It!
+          </div>
+        </div>
+        <p className={`text-[15px] ${brandSecondaryText}`}>
+          Wait a few seconds for the response and check your inbox using the
+          below command to see the Price.
+        </p>
+        <div className="flex flex-col items-center gap-[6px] min-w-full">
+          <CodeBlock step={checkInbox} />
+          <div
+            onClick={() => {
+              tryItHandler(checkInbox);
             }}
             className={`${brandSecondaryBg} px-3 py-[1.5px] rounded-md 
             text-center text-[13.5px] font-medium

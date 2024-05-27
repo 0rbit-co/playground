@@ -10,16 +10,16 @@ const NewsFeed = () => {
 
   // const step2 =
   //   'TOKEN_PRICES = TOKEN_PRICES or {\n\tBTC = {\n\t\tcoingecko_id = "bitcoin",\n\t\tprice = 0,\n\t\tlast_update_timestamp = 0\n\t},\n\tETH = {\n\t\tcoingecko_id = "ethereum",\n\t\tprice = 0,\n\t\tlast_update_timestamp = 0\n\t},\n\tSOL = {\n\t\tcoingecko_id = "solana",\n\t\tprice = 0,\n\t\tlast_update_timestamp = 0\n\t}\n}\nID_TOKEN = ID_TOKEN or {\n\tbitcoin = "BTC",\n\tethereum = "ETH",\n\tsolana = "SOL"\n}\nLOGS = LOGS or {}';
-  const step31 =
+  const step21 =
     'Handlers.add(\n\t"GetNews",\n\tHandlers.utils.hasMatchingTag("Action", "Get-News"), \n\tfunction(msg)\n\t\tlocal news = json.encode(NEWS)\n\t\tHandlers.utils.reply(news)(msg)\n\tend\n)';
-  const step32 =
+  const step22 =
     'Handlers.add(\n\t"FetchNews",\n\tHandlers.utils.hasMatchingTag("Action", "Fetch-News"),\n\tfunction()\n\t\tSend({\n\t\t\tTarget = _0RBT_TOKEN,\n\t\t\tAction = "Transfer",\n\t\t\tRecipient = _0RBIT,\n\t\t\tQuantity = FEE_AMOUNT,\n\t\t\t["X-Url"] = URL,\n\t\t\t["X-Action"] = "Get-Real-Data"\n\t\t})\n\t\tprint(Colors.green .. "GET Request sent to the 0rbit process.")\n\tend\n)';
-  const step33 =
+  const step23 =
     'Handlers.add(\n\t"ReceiveData",\n\tHandlers.utils.hasMatchingTag("Action", "Receive-Response"), \n\tfunction(msg)\n\t\tlocal res = json.decode(msg.Data)\n\t\tlocal articles;\n\t\tlocal article;\n\t\tif res.status == "ok" then\n\t\t\tarticles = res.articles;\n\t\t\tfor k, v in pairs(articles) do\n\t\t\t\tarticle =\n\t\t\t\t{\n\t\t\t\t\ttitle = v.title,\n\t\t\t\t\tdescription = v.description,\n\t\t\t\t\turl = v.url\n\t\t\t\t}\n\t\t\t\ttable.insert(NEWS, article)\n\t\t\tend\n\t\t\tprint("News Updated")\n\t\telse\n\t\t\tprint("Error in fetching news")\n\t\tend\n\tend\n)';
-  const step4 =
-    'Send({Target="cxhbOnMAS-OPoETj9BetZ-KA3zZ9AWYMrkbKd9WRJ3k", Action="Get-Drop"})';
-  const step5 = 'Send({ Target = ao.id, Action="Fetch-News"})';
-  const step6 = 'Send({ Target = ao.id, Action="Get-News"})';
+  const step3 =
+    'Send({Target="BUhZLMwQ6yZHguLtJYA5lLUa9LQzLXMXRfaq9FVcPJc", Action="Balance"})';
+  const step4 = 'Send({ Target = ao.id, Action="Fetch-News"})';
+  const step5 = 'Send({ Target = ao.id, Action="Get-News"})';
   const setCurCode = useCodeStore((state) => state.changeCode);
   const tryItHandler = (code: any) => {
     console.log(code);
@@ -65,42 +65,19 @@ const NewsFeed = () => {
           </div>
         </div>
       </div>
-      {/* step2 */}
-      {/* <div className="flex flex-col gap-2">
-        <h4 className="font-semibold text-[18px]">
-          {"> "}Step 2: Token Prices, Requested Tokens and Logging
-          Initialization
-        </h4>
-        <div className="flex flex-col items-center gap-[6px] min-w-full">
-          <CodeBlock step={step2} />
-          <div
-            onClick={() => {
-              // setCode(assignVar);
-              tryItHandler(step2);
-            }}
-            className={`${brandSecondaryBg} px-3 py-[1.5px] rounded-md 
-            text-center text-[13.5px] font-medium
-            flex items-center justify-center self-end
-            h-fit min-w-fit
-            hover:text-[15px] hover:cursor-pointer`}
-          >
-            Try It!
-          </div>
-        </div>
-      </div> */}
-      {/* step3 */}
+      {/* Step2 */}
       <div className="flex flex-col gap-2">
         <h4 className="font-semibold text-[18px]">
           {"> "}Step 2: Create Handlers
         </h4>
-        {/* step 31 */}
+        {/* step 21 */}
         <p className="text-[13.5px] leading-3 font-medium">Get News Handler</p>
         <div className="flex flex-col items-center gap-[6px] min-w-full">
-          <CodeBlock step={step31} />
+          <CodeBlock step={step21} />
           <div
             onClick={() => {
               // setCode(assignVar);
-              tryItHandler(step31);
+              tryItHandler(step21);
             }}
             className={`${brandSecondaryBg} px-3 py-[1.5px] rounded-md 
             text-center text-[13.5px] font-medium
@@ -126,15 +103,15 @@ const NewsFeed = () => {
           </span>{" "}
           table and is called when a process wants the latest news.
         </p>
-        {/* step32 */}
+        {/* step22 */}
         <p className="text-[13.5px] leading-3 font-medium mt-5">
           Fetch News Handler
         </p>
         <div className="flex flex-col items-center gap-[6px] min-w-full">
-          <CodeBlock step={step32} />
+          <CodeBlock step={step22} />
           <div
             onClick={() => {
-              tryItHandler(step32);
+              tryItHandler(step22);
             }}
             className={`${brandSecondaryBg} px-3 py-[1.5px] rounded-md 
             text-center text-[13.5px] font-medium
@@ -167,16 +144,16 @@ const NewsFeed = () => {
           </span>{" "}
           table.
         </p>
-        {/* step33 */}
+        {/* step23 */}
         <p className="text-[13.5px] leading-3 font-medium mt-5">
           Receive Data Handler
         </p>
         <div className="flex flex-col items-center gap-[6px] min-w-full">
-          <CodeBlock step={step33} />
+          <CodeBlock step={step23} />
           <div
             onClick={() => {
               // setCode(assignVar);
-              tryItHandler(step33);
+              tryItHandler(step23);
             }}
             className={`${brandSecondaryBg} px-3 py-[1.5px] rounded-md 
             text-center text-[13.5px] font-medium
@@ -199,7 +176,7 @@ const NewsFeed = () => {
           sends the fetched data to the process.
         </p>
       </div>
-      {/* step4 */}
+      {/* step3 */}
       <div className="flex flex-col gap-2">
         <h4 className="font-semibold text-[18px]">
           {"> "}Step 3: Fund your process
@@ -207,15 +184,15 @@ const NewsFeed = () => {
         <p className={`text-[15px] ${brandSecondaryText}`}>
           Transfer some{" "}
           <span className="font-[Regular] text-[13.5px]">$0RBT</span> to your
-          processID OR get a drop of{" "}
-          <span className="font-[Regular] text-[13.5px]">10 $0RBT</span> using
-          the following command:
+          processID. You can check how much{" "}
+          <span className="font-[Regular] text-[13.5px]">$0RBT</span> you have
+          using the following command:
         </p>
         <div className="flex flex-col items-center gap-[6px] min-w-full">
-          <CodeBlock step={step4} />
+          <CodeBlock step={step3} />
           <div
             onClick={() => {
-              tryItHandler(step4);
+              tryItHandler(step3);
             }}
             className={`${brandSecondaryBg} px-3 py-[1.5px] rounded-md 
             text-center text-[13.5px] font-medium
@@ -233,10 +210,10 @@ const NewsFeed = () => {
           {"> "}Step 4: Fetch the News
         </h4>
         <div className="flex flex-col items-center gap-[6px] min-w-full">
-          <CodeBlock step={step5} />
+          <CodeBlock step={step4} />
           <div
             onClick={() => {
-              tryItHandler(step5);
+              tryItHandler(step4);
             }}
             className={`${brandSecondaryBg} px-3 py-[1.5px] rounded-md 
             text-center text-[13.5px] font-medium
@@ -254,10 +231,10 @@ const NewsFeed = () => {
           {"> "}Step 5: Check the News
         </h4>
         <div className="flex flex-col items-center gap-[6px] min-w-full">
-          <CodeBlock step={step6} />
+          <CodeBlock step={step5} />
           <div
             onClick={() => {
-              tryItHandler(step6);
+              tryItHandler(step5);
             }}
             className={`${brandSecondaryBg} px-3 py-[1.5px] rounded-md 
             text-center text-[13.5px] font-medium

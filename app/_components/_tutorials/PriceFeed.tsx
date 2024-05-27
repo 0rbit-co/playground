@@ -16,7 +16,7 @@ const PriceFeed = () => {
   const step33 =
     'Handlers.add(\n\t"ReceiveData",\n\tHandlers.utils.hasMatchingTag("Action", "Receive-Response"), \n\tfunction(msg)\n\t\tlocal res = json.decode(msg.Data)\n\t\tfor k, v in pairs(res) do\n\t\t\tTOKEN_PRICES[ID_TOKEN[k]].price = tonumber(v.usd)\n\t\t\tTOKEN_PRICES[ID_TOKEN[k]].last_update_timestamp = msg.Timestamp\n\t\tend\n\tend\n)';
   const step4 =
-    'Send({Target="cxhbOnMAS-OPoETj9BetZ-KA3zZ9AWYMrkbKd9WRJ3k", Action="Get-Drop"})';
+    'Send({Target="BUhZLMwQ6yZHguLtJYA5lLUa9LQzLXMXRfaq9FVcPJc", Action="Balance"})';
   const step5 = 'Send({ Target = ao.id, Action="Fetch-Price"})';
   const step6 =
     'Send({ Target = ao.id, Action="Get-Token-Price", Tags = { Token = "BTC" }})';
@@ -204,9 +204,9 @@ const PriceFeed = () => {
         <p className={`text-[15px] ${brandSecondaryText}`}>
           Transfer some{" "}
           <span className="font-[Regular] text-[13.5px]">$0RBT</span> to your
-          processID OR get a drop of{" "}
-          <span className="font-[Regular] text-[13.5px]">10 $0RBT</span> using
-          the following command:
+          processID. You can check how much{" "}
+          <span className="font-[Regular] text-[13.5px]">$0RBT</span> you have
+          using the following command:
         </p>
         <div className="flex flex-col items-center gap-[6px] min-w-full">
           <CodeBlock step={step4} />

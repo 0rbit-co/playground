@@ -6,20 +6,20 @@ import { brandSecondaryBg, brandSecondaryText } from "@/app/_utils/colors";
 
 const NewsFeed = () => {
   const step1 =
-    'local json = require("json")\n\n_0RBIT = "BaMK1dfayo75s3q1ow6AO64UDpD9SEFbeE8xYrY2fyQ"\n_0RBT_TOKEN = "BUhZLMwQ6yZHguLtJYA5lLUa9LQzLXMXRfaq9FVcPJc"\n\nURL = "https://saurav.tech/NewsAPI/top-headlines/category/health/in.json"\nFEE_AMOUNT = "1000000000000" -- 1 $0RBT\nNEWS = NEWS or {}';
+    '_0RBIT = "BaMK1dfayo75s3q1ow6AO64UDpD9SEFbeE8xYrY2fyQ"\n_0RBT_TOKEN = "BUhZLMwQ6yZHguLtJYA5lLUa9LQzLXMXRfaq9FVcPJc"\n\nURL = "https://saurav.tech/NewsAPI/top-headlines/category/health/in.json"\nFEE_AMOUNT = "1000000000000" -- 1 $0RBT\nNEWS = NEWS or {}';
 
   // const step2 =
   //   'TOKEN_PRICES = TOKEN_PRICES or {\n\tBTC = {\n\t\tcoingecko_id = "bitcoin",\n\t\tprice = 0,\n\t\tlast_update_timestamp = 0\n\t},\n\tETH = {\n\t\tcoingecko_id = "ethereum",\n\t\tprice = 0,\n\t\tlast_update_timestamp = 0\n\t},\n\tSOL = {\n\t\tcoingecko_id = "solana",\n\t\tprice = 0,\n\t\tlast_update_timestamp = 0\n\t}\n}\nID_TOKEN = ID_TOKEN or {\n\tbitcoin = "BTC",\n\tethereum = "ETH",\n\tsolana = "SOL"\n}\nLOGS = LOGS or {}';
   const step21 =
-    'Handlers.add(\n\t"GetNews",\n\tHandlers.utils.hasMatchingTag("Action", "Get-News"), \n\tfunction(msg)\n\t\tlocal news = json.encode(NEWS)\n\t\tHandlers.utils.reply(news)(msg)\n\tend\n)';
+    'local json = require("json")\n\nHandlers.add(\n\t"GetNews",\n\tHandlers.utils.hasMatchingTag("Action", "Get-News"), \n\tfunction(msg)\n\t\tlocal news = json.encode(NEWS)\n\t\tHandlers.utils.reply(news)(msg)\n\tend\n)';
   const step22 =
     'Handlers.add(\n\t"FetchNews",\n\tHandlers.utils.hasMatchingTag("Action", "Fetch-News"),\n\tfunction()\n\t\tSend({\n\t\t\tTarget = _0RBT_TOKEN,\n\t\t\tAction = "Transfer",\n\t\t\tRecipient = _0RBIT,\n\t\t\tQuantity = FEE_AMOUNT,\n\t\t\t["X-Url"] = URL,\n\t\t\t["X-Action"] = "Get-Real-Data"\n\t\t})\n\t\tprint(Colors.green .. "GET Request sent to the 0rbit process.")\n\tend\n)';
   const step23 =
-    'Handlers.add(\n\t"ReceiveData",\n\tHandlers.utils.hasMatchingTag("Action", "Receive-Response"), \n\tfunction(msg)\n\t\tlocal res = json.decode(msg.Data)\n\t\tlocal articles;\n\t\tlocal article;\n\t\tif res.status == "ok" then\n\t\t\tarticles = res.articles;\n\t\t\tfor k, v in pairs(articles) do\n\t\t\t\tarticle =\n\t\t\t\t{\n\t\t\t\t\ttitle = v.title,\n\t\t\t\t\tdescription = v.description,\n\t\t\t\t\turl = v.url\n\t\t\t\t}\n\t\t\t\ttable.insert(NEWS, article)\n\t\t\tend\n\t\t\tprint("News Updated")\n\t\telse\n\t\t\tprint("Error in fetching news")\n\t\tend\n\tend\n)';
+    'local json = require("json")\n\nHandlers.add(\n\t"ReceiveData",\n\tHandlers.utils.hasMatchingTag("Action", "Receive-Response"), \n\tfunction(msg)\n\t\tlocal res = json.decode(msg.Data)\n\t\tlocal articles;\n\t\tlocal article;\n\t\tif res.status == "ok" then\n\t\t\tarticles = res.articles;\n\t\t\tfor k, v in pairs(articles) do\n\t\t\t\tarticle =\n\t\t\t\t{\n\t\t\t\t\ttitle = v.title,\n\t\t\t\t\tdescription = v.description,\n\t\t\t\t\turl = v.url\n\t\t\t\t}\n\t\t\t\ttable.insert(NEWS, article)\n\t\t\tend\n\t\t\tprint("News Updated")\n\t\telse\n\t\t\tprint("Error in fetching news")\n\t\tend\n\tend\n)';
   const step3 =
     'Send({Target="BUhZLMwQ6yZHguLtJYA5lLUa9LQzLXMXRfaq9FVcPJc", Action="Balance"})';
   const step4 = 'Send({ Target = ao.id, Action="Fetch-News"})';
-  const step5 = 'Send({ Target = ao.id, Action="Get-News"})';
+  const step5 = "NEWS";
   const setCurCode = useCodeStore((state) => state.changeCode);
   const tryItHandler = (code: any) => {
     console.log(code);
@@ -71,7 +71,7 @@ const NewsFeed = () => {
           {"> "}Step 2: Create Handlers
         </h4>
         {/* step 21 */}
-        <p className="text-[13.5px] leading-3 font-medium">Get News Handler</p>
+        {/* <p className="text-[13.5px] leading-3 font-medium">Get News Handler</p>
         <div className="flex flex-col items-center gap-[6px] min-w-full">
           <CodeBlock step={step21} />
           <div
@@ -102,7 +102,7 @@ const NewsFeed = () => {
             NEWS
           </span>{" "}
           table and is called when a process wants the latest news.
-        </p>
+        </p> */}
         {/* step22 */}
         <p className="text-[13.5px] leading-3 font-medium mt-5">
           Fetch News Handler

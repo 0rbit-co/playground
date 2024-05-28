@@ -17,7 +17,8 @@ const Header = () => {
   return (
     <>
       <header className="max-w-[1800px] border-b-2 border-[#25291C] text-center top-0 flex flex-row items-center lg:justify-between justify-center sm:px-20 px-[12px] py-1.5 w-full">
-        <div className="flex flex-row gap-3 items-center">
+        <div className="">
+          <a href="https://www.0rbit.co/" className="flex flex-row gap-3 items-center">
           <Image
             src="/logos/recLight.svg"
             width={60}
@@ -30,6 +31,7 @@ const Header = () => {
           >
             playground
           </h1>
+          </a>
         </div>
         <div className=" flex-row gap-3 lg:flex hidden">
           <a

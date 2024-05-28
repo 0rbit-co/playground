@@ -15,17 +15,12 @@ export default function Home() {
           <div className="">
             <DropDown />
           </div>
-          <div className={`${brandDarkBg} min-h-[90%] p-4 rounded-md`}>
+          <div className={`${brandDarkBg} p-4 rounded-md`}>
             <TutRender />
           </div>
         </div>
         <div className="w-1/2 flex flex-col justify-start gap-8">
-          <div className="">
-            <ToolTip />
-          </div>
-          <div className={`${brandDarkBg} min-h-[90%] p-4 rounded-md`}>
-            <BetterIDEa />
-          </div>
+          <BetterIDEa />
         </div>
       </div>
       <Footer />

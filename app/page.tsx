@@ -23,7 +23,7 @@ export default function Home() {
         </div>
       </div>
       <div className="max-w-[86%] min-w-[86%] flex justify-end text-[#444444] text-lg font-light leading-tight">
-        <span>Powered by <a href="https://ide.betteridea.dev/" className="underline">BetterIDEa</a></span>
+        <span>Powered by <a href="https://ide.betteridea.dev/" className="underline">BetterIDEa</a> </span>
       </div>
       <Footer />
     </main>

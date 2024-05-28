@@ -11,7 +11,7 @@ const Footer = () => {
     >
       <section className="flex flex-row items-center justify-between py-[12px] sm:px-20 px-[12px] max-w-[1800px] w-full">
         <h3
-          className={`${brandSecondaryText} font-bold sm:text-[18px] text-[12px] font-[Regular]`}
+          className={`${brandSecondaryText} sm:text-[18px] text-[12px] font-[Regular]`}
         >
           &copy; 2024 <span className="">0rbit</span>
         </h3>

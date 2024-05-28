@@ -4,30 +4,27 @@ import { brandDarkBg, brandDarkText, brandLightBg } from "./_utils/colors";
 export default function Home() {
   return (
     <main
-      className={`min-h-[100vh] max-h-[100vh] min-w-[100vw] 
+      className={`h-[100vh] min-w-[100vw] 
     ${brandLightBg} text-[#f1f1f1]
     flex flex-col items-center justify-between gap-[21px]`}
     >
       <Header />
-      <DropDown />
-      <div className="w-full lg:px-20 px-[15px] flex-row gap-9 justify-between lg:flex hidden max-w-[1800px]">
-        <section
-          className={`w-[48%] flex flex-col px-4 py-6 min-h-[100%] ${brandDarkBg} rounded-lg`}
-        >
-          <TutRender />
-        </section>
-        <section
-          className={`w-[48%] min-h-[100%] p-1 ${brandDarkBg} rounded-md`}
-        >
+      <div className="w-[86%] flex-row gap-9 justify-between lg:flex hidden max-w-[1800px]">
+        <div className="w-1/2 flex flex-col justify-start gap-6">
+          <div className="">
+            <DropDown />
+          </div>
+          <div className={`${brandDarkBg} p-4 rounded-md`}>
+            <TutRender />
+          </div>
+        </div>
+        <div className="w-1/2 flex flex-col justify-start gap-6">
           <BetterIDEa />
-        </section>
+        </div>
       </div>
-      <p
-        className={`w-full text-right font-light text-[18px]
-      mt-[6px] mb-[-12px] px-20 ${brandDarkText} lg:block hidden max-w-[1800px]`}
-      >
-        Powered by betterIdeA
-      </p>
+      <div className="max-w-[86%] min-w-[86%] flex justify-end text-[#444444] text-lg font-light leading-tight">
+        <span>Powered by <a href="https://ide.betteridea.dev/" className="underline">BetterIDEa</a> </span>
+      </div>
       <Footer />
     </main>
   );

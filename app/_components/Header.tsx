@@ -6,6 +6,7 @@ import {
   brandSecondaryBg,
 } from "../_utils/colors";
 import { Comfortaa } from "next/font/google";
+import { GoArrowUpRight } from "react-icons/go";
 
 const comfortaa = Comfortaa({
   subsets: ["latin"],
@@ -15,8 +16,9 @@ const comfortaa = Comfortaa({
 const Header = () => {
   return (
     <>
-      <header className="max-w-[1800px] text-center top-0 flex flex-row items-center lg:justify-between justify-center sm:px-20 px-[12px] pt-3 w-full">
-        <div className="flex flex-row gap-3 items-center">
+      <header className="max-w-[1800px] border-b-[1px] border-[#25291C]/40 text-center top-0 flex flex-row items-center lg:justify-between justify-center sm:px-20 px-[12px] py-1.5 w-full">
+        <div className="">
+          <a href="https://www.0rbit.co/" className="flex flex-row gap-3 items-center">
           <Image
             src="/logos/recLight.svg"
             width={60}
@@ -29,6 +31,7 @@ const Header = () => {
           >
             playground
           </h1>
+          </a>
         </div>
         <div className=" flex-row gap-3 lg:flex hidden">
           <a
@@ -50,17 +53,20 @@ const Header = () => {
       <div
         className={`${brandDarkText} max-w-[1800px] lg:px-20 px-10 text-center  `}
       >
-        <h2 className="text-[33px] font-medium leading-[36px] lg:block hidden">
-          Checkout our <span className={`text-[#D16D1B]`}>AO playground</span>{" "}
-          👀. You can use the code tutorials and test them on aos directly here.
+        <h2 className="text-[28px] leading-[36px] font-medium lg:block hidden text-[#25291C]">
+          Test <span className="font-['Regular'] text-[#EB8F44]">0rbit</span> in
+          your browser. You can use the code tutorials and test them directly
+          here.
           For more info, check out our{" "}
-          <a
-            href="https://docs.0rbit.co/"
-            className={`${brandSecondaryBg} ${brandLightText} px-[12px] py-[1px] rounded-md text-[24px]
-            hover:cursor-pointer hover:bg-[#ce7d3b] hover:underline shadow-[0.9px_0.9px_3px_0px_#25291C] hover:shadow-none`}
-          >
-            Docs
-          </a>
+          <span className="inline-flex items-center">
+            <a
+              href="https://docs.0rbit.co/"
+              className="text-[28px] text-[#EB8F44] underline"
+            >
+              Docs.
+            </a>
+            <GoArrowUpRight className="text-[#EB8F44]" />
+          </span>
         </h2>
         <div className="lg:hidden flex flex-col gap-3 items-center justify-center">
           <Image

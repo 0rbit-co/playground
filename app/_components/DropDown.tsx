@@ -32,7 +32,7 @@ const DropDown = () => {
     setDropdown(false);
   };
   return (
-    <div className="h-[33px] w-full justify-start px-20 lg:flex hidden max-w-[1800px]">
+    <div className="h-[33px] w-full justify-start px-4 mx-[-12px] lg:flex hidden max-w-[1800px]">
       <ul
         onMouseEnter={() => {
           setDropdown(true);
@@ -43,7 +43,7 @@ const DropDown = () => {
         className={` overflow- rounded-md w-[180px] z-10`}
       >
         <li
-          className={`flex flex-row justify-between items-center hover:tracking-widest hover:cursor-pointer
+          className={`flex flex-row justify-between items-center hover:cursor-pointer
         ${brandSecondaryBg} px-[12px] py-[6px] rounded-t-md ${
             dropdown ? "" : " rounded-b-md"
           }`}
@@ -58,7 +58,7 @@ const DropDown = () => {
                 onClick={() => {
                   tutorialClickHandler("GET Request");
                 }}
-                className={`hover:tracking-widest hover:cursor-pointer ${brandSecondaryBg} ${brandDarkText} px-[12px] py-[6px] hover:bg-[#e8ab79]`}
+                className={`hover:cursor-pointer ${brandSecondaryBg} ${brandDarkText} px-[12px] py-[6px] hover:bg-[#e8ab79]`}
               >
                 GET Request
               </li>
@@ -70,7 +70,7 @@ const DropDown = () => {
                 onClick={() => {
                   tutorialClickHandler("Pricefeed");
                 }}
-                className={`hover:tracking-widest hover:cursor-pointer ${brandSecondaryBg} ${brandDarkText} px-[12px] py-[6px] hover:bg-[#e8ab79]`}
+                className={`hover:cursor-pointer ${brandSecondaryBg} ${brandDarkText} text-white px-[12px] py-[6px] hover:bg-[#e8ab79]`}
               >
                 Pricefeed
               </li>
@@ -82,7 +82,7 @@ const DropDown = () => {
                 onClick={() => {
                   tutorialClickHandler("Newsfeed");
                 }}
-                className={`hover:tracking-widest hover:cursor-pointer ${brandSecondaryBg} ${brandDarkText} px-[12px] py-[6px] hover:bg-[#e8ab79] rounded-b-md`}
+                className={`hover:cursor-pointer ${brandSecondaryBg} ${brandDarkText} text-white px-[12px] py-[6px] hover:bg-[#e8ab79] rounded-b-md`}
               >
                 Newsfeed
               </li>

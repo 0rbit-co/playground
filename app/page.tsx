@@ -1,5 +1,4 @@
 import { BetterIDEa, DropDown, Footer, Header, TutRender } from "./_components";
-import ToolTip from "./_components/ToolTip";
 import { brandDarkBg, brandDarkText, brandLightBg } from "./_utils/colors";
 
 export default function Home() {
@@ -11,7 +10,7 @@ export default function Home() {
     >
       <Header />
       <div className="w-[96%] flex-row gap-9 justify-between lg:flex hidden max-w-[1800px]">
-        <div className="w-1/2 flex flex-col justify-start gap-8">
+        <div className="w-1/2 flex flex-col justify-start gap-6">
           <div className="">
             <DropDown />
           </div>
@@ -19,7 +18,7 @@ export default function Home() {
             <TutRender />
           </div>
         </div>
-        <div className="w-1/2 flex flex-col justify-start gap-8">
+        <div className="w-1/2 flex flex-col justify-start gap-6">
           <BetterIDEa />
         </div>
         

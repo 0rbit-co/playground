@@ -16,7 +16,7 @@ const comfortaa = Comfortaa({
 const Header = () => {
   return (
     <>
-      <header className="max-w-[1800px] border-b-2 border-[#25291C] text-center top-0 flex flex-row items-center lg:justify-between justify-center sm:px-20 px-[12px] py-1.5 w-full">
+      <header className="max-w-[1800px] border-b-[1px] border-[#25291C]/40 text-center top-0 flex flex-row items-center lg:justify-between justify-center sm:px-20 px-[12px] py-1.5 w-full">
         <div className="">
           <a href="https://www.0rbit.co/" className="flex flex-row gap-3 items-center">
           <Image
@@ -53,7 +53,7 @@ const Header = () => {
       <div
         className={`${brandDarkText} max-w-[1800px] lg:px-20 px-10 text-center  `}
       >
-        <h2 className="text-[31px] font-medium leading-[36px] lg:block hidden text-[#25291C]">
+        <h2 className="text-[28px] leading-[36px] font-medium lg:block hidden text-[#25291C]">
           Test <span className="font-['Regular'] text-[#EB8F44]">0rbit</span> in
           your browser. You can use the code tutorials and test them directly
           here. <br />
@@ -61,7 +61,7 @@ const Header = () => {
           <span className="inline-flex items-center">
             <a
               href="https://docs.0rbit.co/"
-              className="text-[31px] text-[#EB8F44] underline"
+              className="text-[28px] text-[#EB8F44] underline"
             >
               Docs.
             </a>

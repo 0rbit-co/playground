@@ -2,25 +2,26 @@
 import React from "react";
 import PrismLoader from "../PrismLoader";
 import { useCodeStore } from "../../_store/store";
-import InlineCode from "../InlineCode";
 
 const POSTReq = () => {
   const setCurCode = useCodeStore((state) => state.changeCode);
   const assignVar = '_0RBIT= "WSXUI2JjYUldJ7CKq9wE1MGwXs-ldzlUlHOQszwQe0s"';
   const getRealData =
-    'local json = require("json")\nSend({Target = _0RBIT,Action = "Post-Real-Data",Url = "https://arweave.net/graphql",Body = json.encode({query = [[query {transactions(owners: ["vh-NTHVvlKZqRxc8LyyTNok65yQ55a_PJ1zWLb9G2JI"]) {edges {node {id}}}}]],variables = {}})})';
+    'local json = require("json")\nSend({\n\tTarget = _0RBIT,\n\tAction = "Post-Real-Data",\n\tUrl = "https://arweave.net/graphql",\n\tBody = json.encode({\n\t\tquery = [[\n\t\t\tquery {\n\t\t\t\ttransactions(\n\t\t\t\t\towners: ["vh-NTHVvlKZqRxc8LyyTNok65yQ55a_PJ1zWLb9G2JI"]\n\t\t\t\t) {\n\t\t\t\t\tedges{\n\t\t\t\t\t\tnode {id}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t]],\n\t\tvariables = {}\n\t})\n})';
   const inbox = "#Inbox";
-  // const [code, setCode] = useState("");
   const tryItHandler = (code: any) => {
     console.log(code);
     setCurCode(code);
   };
   return (
-    <div className="max-h-[300px] overflow-scroll ">
+    <div className="max-h-[48vh] overflow-scroll min-w-full">
       {" "}
-      <h4 className=" font-semibold"> {">"} Step 1: Create a variable</h4>
-      <div className="flex flex-row items-center justify-center gap-3">
-        <pre className="language-js flex flex-row justify-between items-center">
+      <h4 className="font-extralight text-[18px] ml-[6px] mb-[6px]">
+        {" "}
+        {">"} Step 1: Create a variable for 0rbit's Process Id
+      </h4>
+      <div className="flex flex-row items-center justify-center gap-3 mb-6">
+        <pre className="language-js flex flex-row justify-between items-center !bg-[#61625F]">
           <code className="language-js">{assignVar}</code>
           <PrismLoader />
         </pre>
@@ -38,15 +39,11 @@ const POSTReq = () => {
           Try It!
         </div>
       </div>
-      <h6>
-        This will create a variable <InlineCode>_0RBIT</InlineCode> and assign
-        the value of the process ID of the 0rbit's GET{" "}
-        <InlineCode>ao</InlineCode> process.
-      </h6>
-      <h4 className=" font-semibold">{"> "}Step 2: Create a Get request</h4>
-      <div className="rounded-x text-[15px]"></div>
+      <h4 className="font-extralight text-[18px] ml-[6px] mb-[6px]">
+        {"> "}Step 2: Create a Post request
+      </h4>
       <div className="flex flex-row items-center justify-center gap-3">
-        <pre className="language-lua">
+        <pre className="language-lua !bg-[#61625F]">
           <code className="language-lua">{getRealData}</code>
           <PrismLoader />
         </pre>
@@ -64,33 +61,19 @@ const POSTReq = () => {
           Try It!
         </div>
       </div>
-      <h6>In this command:</h6>
-      <ul>
-        <li>
-          TARGET is the process ID of the ao process user wants to interact
-          with, which in this case is 0rbit's GET ao process.
-        </li>
-        <li>
-          Action is the specific tag required by 0rbit to perform the Get
-          request.
-        </li>
-        <li>
-          {" "}
-          Url is the URL of the website from which we want to get the data.{" "}
-        </li>
-      </ul>
-      <h6>
+      <h6 className="mb-6">
         This will create a Get request and send it to the 0rbit's GET ao
         process.
       </h6>
-      <h4 className=" font-semibold">{"> "}Step 3: Check the Inbox</h4>
+      <h4 className="font-extralight text-[18px] ml-[6px] mb-[6px]">
+        {"> "}Step 3: Check the Inbox
+      </h4>
       <h6>
-        After sending the request, you can check the inbox of your ao process to
-        see the response from the 0rbit. Just type the following command in the
-        terminal:
+        You can check the inbox of your ao process to see the response from the
+        0rbit.
       </h6>
-      <div className="flex flex-row items-center justify-center gap-3">
-        <pre className="language-lua">
+      <div className="flex flex-row items-center gap-3 min-w-full">
+        <pre className="language-lua w-full !bg-[#61625F]">
           <code className="language-lua">{inbox}</code>
           <PrismLoader />
         </pre>

@@ -1,28 +1,34 @@
-import { BetterIDEa, Header, InfoStatic, Tabs, TutRender } from "./_components";
+import { BetterIDEa, DropDown, Footer, Header, TutRender } from "./_components";
+import { brandDarkBg, brandDarkText, brandLightBg } from "./_utils/colors";
 
 export default function Home() {
   return (
     <main
-      className="min-h-[100vh] min-w-[100vw] 
-    bg-[#E3E7D3] text-[#f1f1f1]
-    flex flex-col items-center justify-center px-[20px]"
+      className={`min-h-[100vh] max-h-[100vh] min-w-[100vw] 
+    ${brandLightBg} text-[#f1f1f1]
+    flex flex-col items-center justify-between gap-[21px]`}
     >
       <Header />
-      <div
-        className="flex flex-row mt-[54px]
-      bg-[#272a1c] rounded-md w-[100%] max-h-[80vh]
-      border-[1px] border-[#000000] 
-      "
-      >
-        <section className="w-[50%] flex flex-col px-6 py-6 min-h-fit">
-          <InfoStatic />
-          <Tabs />
+      <DropDown />
+      <div className="w-full lg:px-20 px-[15px] flex-row gap-9 justify-between lg:flex hidden max-w-[1800px]">
+        <section
+          className={`w-[48%] flex flex-col px-4 py-6 min-h-[100%] ${brandDarkBg} rounded-lg`}
+        >
           <TutRender />
         </section>
-        <section className="w-[50%]">
+        <section
+          className={`w-[48%] min-h-[100%] p-1 ${brandDarkBg} rounded-md`}
+        >
           <BetterIDEa />
         </section>
       </div>
+      <p
+        className={`w-full text-right font-light text-[18px]
+      mt-[6px] mb-[-12px] px-20 ${brandDarkText} lg:block hidden max-w-[1800px]`}
+      >
+        Powered by betterIdeA
+      </p>
+      <Footer />
     </main>
   );
 }

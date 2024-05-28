@@ -1,7 +1,7 @@
 "use client";
 import { useTutorialStore } from "@/app/_store/store";
 import React, { useEffect } from "react";
-import { GETReq, POSTReq, PriceFeed, NewsFeed } from "../";
+import { GETReq, PriceFeed, NewsFeed } from "../";
 
 const TutRender = () => {
   const currentTut = useTutorialStore((state) => state.curTutorial);
@@ -9,11 +9,10 @@ const TutRender = () => {
     console.log(currentTut);
   }, [currentTut]);
   return (
-    <div className="bg-[#121212] px-9 py-6 mt-6 rounded-xl min-h-fit">
-      {currentTut == "get" && <GETReq />}
-      {currentTut == "post" && <POSTReq />}
-      {currentTut == "pf" && <PriceFeed />}
-      {currentTut == "nf" && <NewsFeed />}
+    <div className="px-6 mx-[-12px] rounded-md min-h-fit leading-6">
+      {currentTut == "GET Request" && <GETReq />}
+      {currentTut == "Pricefeed" && <PriceFeed />}
+      {currentTut == "Newsfeed" && <NewsFeed />}
     </div>
   );
 };

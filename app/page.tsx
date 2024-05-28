@@ -9,7 +9,7 @@ export default function Home() {
     flex flex-col items-center justify-between gap-[21px]`}
     >
       <Header />
-      <div className="w-[96%] flex-row gap-9 justify-between lg:flex hidden max-w-[1800px]">
+      <div className="w-[86%] flex-row gap-9 justify-between lg:flex hidden max-w-[1800px]">
         <div className="w-1/2 flex flex-col justify-start gap-6">
           <div className="">
             <DropDown />
@@ -21,7 +21,6 @@ export default function Home() {
         <div className="w-1/2 flex flex-col justify-start gap-6">
           <BetterIDEa />
         </div>
-        
       </div>
       <div className="text-end w-full flex justify-end px-8 text-[#444444] text-lg font-light leading-tight">Powered by betterIdeA</div>
       <Footer />

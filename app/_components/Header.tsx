@@ -56,7 +56,7 @@ const Header = () => {
         <h2 className="text-[28px] leading-[36px] font-medium lg:block hidden text-[#25291C]">
           Test <span className="font-['Regular'] text-[#EB8F44]">0rbit</span> in
           your browser. You can use the code tutorials and test them directly
-          here. <br />
+          here.
           For more info, check out our{" "}
           <span className="inline-flex items-center">
             <a

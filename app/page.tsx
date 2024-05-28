@@ -22,7 +22,9 @@ export default function Home() {
           <BetterIDEa />
         </div>
       </div>
-      <div className="text-end w-full flex justify-end px-8 text-[#444444] text-lg font-light leading-tight">Powered by betterIdeA</div>
+      <div className="w-[86%] flex justify-end text-[#444444] text-lg font-light leading-tight">
+        <span>Powered by betterIdeA</span>
+      </div>
       <Footer />
     </main>
   );

@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useCodeStore } from "../_store/store";
-import { CodeCell, setCellCode, getInbox } from "@betteridea/codecell";
+import { CodeCell, setCellCode } from "@betteridea/codecell";
 import Image from "next/image";
 
 const BetterIDEa = () => {
@@ -21,13 +21,13 @@ const BetterIDEa = () => {
     console.log(pid);
   };
 
-  const onNewMessage = (m: any) => {
-    console.log("message new", m);
-  };
+  // const onNewMessage = (m: any) => {
+  //   console.log("message new", m);
+  // };
 
-  const onInbox = (i: any) => {
-    console.log("inbox", i);
-  };
+  // const onInbox = (i: any) => {
+  //   console.log("inbox", i);
+  // };
 
   const handleCopy = () => {
     if (curPid) {
@@ -83,21 +83,21 @@ const BetterIDEa = () => {
           </div>
         </div>
       </div>
-      <button
+      {/* <button
         className="bg-[#000000] px-[12px]"
         onClick={() => {
           getInbox("1", true);
         }}
       >
         Check Inbox
-      </button>
+      </button> */}
       <CodeCell
         height="100%"
         cellId="1"
         appName="Sandbox"
         onAOProcess={onAOProcess}
-        onNewMessage={onNewMessage}
-        onInbox={onInbox}
+        // onNewMessage={onNewMessage}
+        // onInbox={onInbox}
       />
     </>
   );

@@ -39,7 +39,7 @@ const BetterIDEa = () => {
   const onNewMessage = (m: any) => {
     console.log("message new", stripAnsiCodes(m), "test\n", m);
     // setNewMes(m);
-    alert("You have new Message!");
+    // alert("You have new Message!");
   };
   // useEffect(() => {
   //   alert(newMes);
@@ -64,7 +64,7 @@ const BetterIDEa = () => {
           // setNewMes(m);
           if (m[0].Output.print) {
             setAlert(true);
-            alert("You have new Message!");
+            // alert("You have new Message!");
           }
         }}
         onInbox={onInbox}

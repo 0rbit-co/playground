@@ -25,8 +25,10 @@ const MessagesDD = () => {
       <button
         disabled={!curPid}
         onClick={() => {
+          console.log("clicked on!mes");
           getInbox("1", true);
           setMesToggle(!mesToggle);
+          console.log(mesToggle);
         }}
         className={`flex flex-row justify-between w-full gap-3 items-center
          transition-[all_0.3s] 
@@ -66,7 +68,12 @@ const MessagesDD = () => {
           />
         )}
       </button>
-      <div className={`max-h-[60px] ${mesToggle ? "overflow-y-scroll" : ""}`}>
+
+      <div
+        className={`max-h-[60px] ${
+          mesToggle ? "overflow-y-scroll block" : "hidden"
+        }`}
+      >
         {/* {mesToggle && messArr
           ? `
           $*/}

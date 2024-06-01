@@ -24,7 +24,7 @@ const BetterIDEa = () => {
 
   const onAOProcess = (pid: any) => {
     setCurPid(pid);
-    console.log(pid);
+    console.log("OnAOProces gave pid:", pid);
   };
 
   const stripAnsiCodes = (str: string) => {
@@ -45,7 +45,7 @@ const BetterIDEa = () => {
   // }, [newMes]);
 
   const onInbox = (i: any) => {
-    console.log("inbox", i);
+    // console.log("inbox", i);
     setMessArr(i);
   };
 

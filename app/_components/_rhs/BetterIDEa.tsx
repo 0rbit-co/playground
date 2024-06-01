@@ -58,7 +58,7 @@ const BetterIDEa = () => {
         appName="Sandbox"
         onAOProcess={onAOProcess}
         onNewMessage={(m: any) => {
-          console.log("message new", stripAnsiCodes(m), "test\n", m);
+          console.log("message new", "test\n", m);
           // setNewMes(m);
           alert("You have new Message!");
         }}

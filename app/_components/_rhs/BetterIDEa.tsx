@@ -1,13 +1,22 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { useCodeStore } from "../_store/store";
-import { CodeCell, setCellCode } from "@betteridea/codecell";
+import {
+  useCodeStore,
+  useMessagesArrayStore,
+  usePidStore,
+} from "../../_store/store";
+import { CodeCell, setCellCode, getInbox } from "@betteridea/codecell";
 import Image from "next/image";
+import { brandLightText } from "../../_utils/colors";
+import PidDisplay from "./PidDisplay";
+import MessagesDD from "./MessagesDD";
 
 const BetterIDEa = () => {
   const curCode = useCodeStore((state) => state.curCode);
+  const setMessArr = useMessagesArrayStore((state) => state.setMessArr);
   const [curPid, setCurPid] = useState("");
   const [copied, setCopied] = useState(false);
+  const [newMes, setNewMes] = useState("");
 
   useEffect(() => {
     console.log(encodeURI(curCode));
@@ -21,13 +30,19 @@ const BetterIDEa = () => {
     console.log(pid);
   };
 
-  // const onNewMessage = (m: any) => {
-  //   console.log("message new", m);
-  // };
+  const onNewMessage = (m: any) => {
+    console.log("message new", m);
+    setNewMes(m);
+  };
+  useEffect(() => {
+    alert(newMes);
+    console.log("new mes", newMes);
+  }, [newMes]);
 
-  // const onInbox = (i: any) => {
-  //   console.log("inbox", i);
-  // };
+  const onInbox = (i: any) => {
+    console.log("inbox", i);
+    setMessArr(i);
+  };
 
   const handleCopy = () => {
     if (curPid) {
@@ -46,7 +61,7 @@ const BetterIDEa = () => {
 
   return (
     <>
-      <div className="relative h-[33px] w-full justify-start px-20 lg:flex hidden max-w-[1800px]">
+      {/* <div className="relative h-[33px] w-full justify-start px-20 lg:flex hidden max-w-[1800px]">
         <div className="absolute left-0 z-10">
           <div className="bg-[#EB8F44] bg-opacity-30 text-[#EB8F44] font-semibold border-2 border-[#EB8F44] text-sm rounded py-2 px-4 shadow-lg relative">
             <div className="flex items-center">
@@ -82,23 +97,20 @@ const BetterIDEa = () => {
             <div className="w-0 h-0 border-t-8 border-t-[#EB8F44] border-r-8 border-r-transparent border-l-8 border-l-transparent absolute left-1 -bottom-2"></div>
           </div>
         </div>
-      </div>
-      {/* <button
-        className="bg-[#000000] px-[12px]"
-        onClick={() => {
-          getInbox("1", true);
-        }}
-      >
-        Check Inbox
-      </button> */}
+      </div> */}
+      <PidDisplay />
       <CodeCell
         height="100%"
         cellId="1"
         appName="Sandbox"
         onAOProcess={onAOProcess}
-        // onNewMessage={onNewMessage}
-        // onInbox={onInbox}
+        onNewMessage={(m: any) => {
+          console.log("check");
+          console.log(m);
+        }}
+        onInbox={onInbox}
       />
+      <MessagesDD />
     </>
   );
 };

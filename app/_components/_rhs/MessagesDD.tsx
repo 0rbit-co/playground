@@ -6,7 +6,6 @@ import Image from "next/image";
 import { useMessagesArrayStore, usePidStore } from "../../_store/store";
 
 const MessagesDD = () => {
-  //   const [mesArr, setMesArr] = useState<any[]>([]);
   const [mesToggle, setMesToggle] = useState(false);
   const messArr = useMessagesArrayStore((state) => state.messArr);
   const curPid = usePidStore((state) => state.curPid);

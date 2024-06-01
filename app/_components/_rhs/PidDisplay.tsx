@@ -26,12 +26,12 @@ const PidDisplay = () => {
         <div className="bg-[#EB8F44] bg-opacity-30 text-[#EB8F44] font-semibold border-2 border-[#EB8F44] xl:text-sm lg:text-[11.1px] rounded py-2 px-4 shadow-lg relative">
           <div className="flex items-center gap-[3px]">
             <h3>
-              {!curPid
-                ? `Process ID: ${curPid}X8imk3qtfoRKYdyPJBR2jCYIqQcJVAMoNwlD26ejY6k
+              {curPid
+                ? `Process ID: ${curPid}
                 `
                 : `Please Connect Your Wallet First !!`}
             </h3>
-            {!curPid ? (
+            {curPid ? (
               copied ? (
                 <Image
                   alt="copy"

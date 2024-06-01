@@ -18,6 +18,11 @@ interface PidState {
   setCurPid: (newPid: string) => void;
 }
 
+interface AlertState {
+  alert: boolean;
+  setAlert: (newAlert: boolean) => void;
+}
+
 export const useTutorialStore = create<TutorialState>()((set) => ({
   curTutorial: "GET Request",
   //   increasePopulation: () => set((state) => ({ bears: state.bears + 1 })),
@@ -38,4 +43,8 @@ export const useMessagesArrayStore = create<MessagesArrayState>()((set) => ({
 export const usePidStore = create<PidState>()((set) => ({
   curPid: "",
   setCurPid: (newPid) => set({ curPid: newPid }),
+}));
+export const useAlertStore = create<AlertState>()((set) => ({
+  alert: false,
+  setAlert: (newAlert) => set({ alert: newAlert }),
 }));

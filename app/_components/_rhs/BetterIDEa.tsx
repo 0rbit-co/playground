@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import {
+  useAlertStore,
   useCodeStore,
   useMessagesArrayStore,
   usePidStore,
@@ -13,6 +14,7 @@ const BetterIDEa = () => {
   const curCode = useCodeStore((state) => state.curCode);
   const setMessArr = useMessagesArrayStore((state) => state.setMessArr);
   const setCurPid = usePidStore((state) => state.setCurPid);
+  const setAlert = useAlertStore((state) => state.setAlert);
   const [newMes, setNewMes] = useState("");
 
   useEffect(() => {
@@ -61,6 +63,7 @@ const BetterIDEa = () => {
           console.log("message new", "test\n", m);
           // setNewMes(m);
           if (m[0].Output.print) {
+            setAlert(true);
             alert("You have new Message!");
           }
         }}

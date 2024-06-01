@@ -3,12 +3,37 @@ import React, { useState, useEffect } from "react";
 import { brandLightText } from "../../_utils/colors";
 import { getInbox } from "@betteridea/codecell";
 import Image from "next/image";
-import { useMessagesArrayStore, usePidStore } from "../../_store/store";
+import {
+  useAlertStore,
+  useMessagesArrayStore,
+  usePidStore,
+} from "../../_store/store";
 
 const MessagesDD = () => {
   const [mesToggle, setMesToggle] = useState(false);
+  const [notif, setNotif] = useState(false);
   const messArr = useMessagesArrayStore((state) => state.messArr);
   const curPid = usePidStore((state) => state.curPid);
+  const alert = useAlertStore((state) => state.alert);
+  const setAlert = useAlertStore((state) => state.setAlert);
+
+  useEffect(() => {
+    getInbox("1", true);
+  }, []);
+
+  useEffect(() => {
+    console.log("alert effecvt triggere", alert);
+    if (!mesToggle && alert) {
+      getInbox("1", true);
+      setNotif(true);
+    }
+  }, [alert]);
+
+  useEffect(() => {
+    if (mesToggle) {
+      setAlert(false);
+    }
+  }, [mesToggle]);
 
   const stripAnsiCodes = (str: string) => {
     return str?.replace(
@@ -53,6 +78,15 @@ const MessagesDD = () => {
               height={21}
               alt="dd"
               className={`${mesToggle ? "rotate-180" : "rotate-0"}`}
+            />
+          )}
+          {notif && (
+            <Image
+              src="/alert.png"
+              width={15}
+              height={21}
+              alt="dd"
+              // className={`${mesToggle ? "rotate-180" : "rotate-0"}`}
             />
           )}
         </div>

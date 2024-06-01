@@ -67,7 +67,7 @@ const MessagesDD = () => {
         )}
       </button>
       <div className={`max-h-[60px] ${mesToggle ? "overflow-y-scroll" : ""}`}>
-        {mesToggle && messArr && curPid
+        {mesToggle && messArr
           ? `
           ${messArr?.map((item, id) => {
             stripAnsiCodes(item.Data);
@@ -80,7 +80,7 @@ const MessagesDD = () => {
               </div>
             );
           })}`
-          : "No Messages"}
+          : `${curPid && mesToggle ? "No Messages" : ""}`}
       </div>
     </div>
   );

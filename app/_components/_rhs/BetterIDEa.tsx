@@ -60,7 +60,9 @@ const BetterIDEa = () => {
         onNewMessage={(m: any) => {
           console.log("message new", "test\n", m);
           // setNewMes(m);
-          alert("You have new Message!");
+          if (m[0].Output.print) {
+            alert("You have new Message!");
+          }
         }}
         onInbox={onInbox}
       />

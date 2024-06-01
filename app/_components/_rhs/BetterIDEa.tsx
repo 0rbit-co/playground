@@ -27,14 +27,21 @@ const BetterIDEa = () => {
     console.log(pid);
   };
 
-  const onNewMessage = (m: any) => {
-    console.log("message new", m);
-    setNewMes(m);
+  const stripAnsiCodes = (str: string) => {
+    return str?.replace(
+      /[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-ORZcf-nqry=><]/g,
+      ""
+    );
   };
-  useEffect(() => {
-    alert(newMes);
-    console.log("new mes", newMes);
-  }, [newMes]);
+
+  // const onNewMessage = (m: any) => {
+  //   console.log("message new", stripAnsiCodes(m), "test\n", m);
+  //   setNewMes(m);
+  // };
+  // useEffect(() => {
+  //   alert(newMes);
+  //   console.log("new mes", newMes);
+  // }, [newMes]);
 
   const onInbox = (i: any) => {
     console.log("inbox", i);
@@ -49,10 +56,7 @@ const BetterIDEa = () => {
         cellId="1"
         appName="Sandbox"
         onAOProcess={onAOProcess}
-        onNewMessage={(m: any) => {
-          console.log("check");
-          console.log(m);
-        }}
+        // onNewMessage={onNewMessage}
         onInbox={onInbox}
       />
       <MessagesDD />

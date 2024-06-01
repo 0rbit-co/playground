@@ -37,7 +37,7 @@ const MessagesDD = () => {
           getInbox("1", true);
           setMesToggle(!mesToggle);
         }}
-        className={`flex flex-row justify-start gap-3 items-center
+        className={`flex flex-row justify-between w-full gap-3 items-center
          transition-[all_0.3s] 
         ${
           curPid
@@ -45,18 +45,33 @@ const MessagesDD = () => {
             : "hover:cursor-not-allowed"
         }`}
       >
-        <h3 className="uppercase text-[15px] text-[#98e870]">
-          {curPid
-            ? `${mesToggle ? "Messages" : "Check Inbox"}`
-            : "Connect Wallet Above"}
-        </h3>
+        <div>
+          <h3 className="uppercase text-[15px] text-[#98e870]">
+            {curPid
+              ? `${mesToggle ? "Messages" : "Check Inbox"}`
+              : "Connect Wallet Above"}
+          </h3>
+          {curPid && (
+            <Image
+              src="/ddMes.png"
+              width={15}
+              height={21}
+              alt="dd"
+              className={`${mesToggle ? "rotate-180" : "rotate-0"}`}
+            />
+          )}
+        </div>
         {curPid && (
           <Image
-            src="/ddMes.png"
+            onClick={() => {
+              getInbox("1", true);
+              setMesToggle(true);
+            }}
+            src="/reload.png"
             width={15}
-            height={21}
-            alt="dd"
-            className={`${mesToggle ? "rotate-180" : "rotate-0"}`}
+            height={15}
+            alt="reload"
+            className=" w-[15px] h-[15px] hover:w-[18px] hover:h-[18px]"
           />
         )}
       </button>

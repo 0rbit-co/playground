@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 * {
-  transition: all 0.6s;
+  transition: all 0.3s;
   box-sizing: border-box;
   scroll-behavior: smooth !important;
-  -ms-overflow-style: none; 
+  -ms-overflow-style: none;
   scrollbar-width: thin;
   scrollbar-color: #eb8f44 transparent;
 }
@@ -19,20 +19,20 @@
 
 *::-webkit-scrollbar-thumb {
   background-color: #eb8f44;
-  border-radius: 10px; 
+  border-radius: 10px;
 }
 
 *::-webkit-scrollbar-track {
-  background: transparent; 
+  background: transparent;
 }
 
 .codeblock {
-  -ms-overflow-style: none; 
-  scrollbar-width: none; 
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .codeblock::-webkit-scrollbar {
-  display: none; 
+  display: none;
 }
 
 :root {

@@ -34,10 +34,11 @@ const BetterIDEa = () => {
     );
   };
 
-  // const onNewMessage = (m: any) => {
-  //   console.log("message new", stripAnsiCodes(m), "test\n", m);
-  //   setNewMes(m);
-  // };
+  const onNewMessage = (m: any) => {
+    console.log("message new", stripAnsiCodes(m), "test\n", m);
+    // setNewMes(m);
+    alert("You have new Message!");
+  };
   // useEffect(() => {
   //   alert(newMes);
   //   console.log("new mes", newMes);
@@ -56,7 +57,7 @@ const BetterIDEa = () => {
         cellId="1"
         appName="Sandbox"
         onAOProcess={onAOProcess}
-        // onNewMessage={onNewMessage}
+        onNewMessage={onNewMessage}
         onInbox={onInbox}
       />
       <MessagesDD />

@@ -32,6 +32,7 @@ const MessagesDD = () => {
   useEffect(() => {
     if (mesToggle) {
       setAlert(false);
+      setNotif(false);
     }
   }, [mesToggle]);
 

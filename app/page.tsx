@@ -22,7 +22,7 @@ export default function Home() {
           <BetterIDEa />
         </div>
       </div>
-      <div className="max-w-[86%] min-w-[86%] lg:flex hidden justify-end text-[#444444] text-lg font-light leading-tight">
+      <div className="max-w-[1800px] w-[86%] lg:flex hidden justify-end text-[#444444] text-lg font-light leading-tight">
         <span>
           Powered by{" "}
           <a href="https://ide.betteridea.dev/" className="underline">

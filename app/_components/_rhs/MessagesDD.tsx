@@ -24,12 +24,6 @@ const MessagesDD = () => {
     >
       <button
         disabled={!curPid}
-        onClick={() => {
-          console.log("clicked on!mes");
-          getInbox("1", true);
-          setMesToggle(!mesToggle);
-          console.log(mesToggle);
-        }}
         className={`flex flex-row justify-between w-full gap-3 items-center
          transition-[all_0.3s] 
         ${
@@ -38,7 +32,15 @@ const MessagesDD = () => {
             : "hover:cursor-not-allowed"
         }`}
       >
-        <div className="flex flex-row gap-3 items-center justify-start">
+        <div
+          onClick={() => {
+            console.log("clicked on!mes");
+            getInbox("1", true);
+            setMesToggle(!mesToggle);
+            console.log(mesToggle);
+          }}
+          className="flex flex-row gap-3 items-center justify-start"
+        >
           <h3 className="uppercase text-[15px] text-[#98e870]">
             {curPid
               ? `${mesToggle ? "Messages" : "Check Inbox"}`
@@ -64,7 +66,9 @@ const MessagesDD = () => {
             width={15}
             height={15}
             alt="reload"
-            className=" w-[15px] h-[15px] hover:w-[18px] hover:h-[18px]"
+            className={` w-[15px] h-[15px] hover:w-[18px] hover:h-[18px] ${
+              mesToggle ? "rotate-[360deg]" : "rotate-0"
+            }`}
           />
         )}
       </button>
@@ -84,7 +88,7 @@ const MessagesDD = () => {
               <span className="text-[#98e870]">{`Inbox[${
                 id + 1
               }].Data: `}</span>
-              {item.Data ? stripAnsiCodes(item.Data) : "No Data"}
+              {item.Data ? `${stripAnsiCodes(item.Data)}` : "No Data"}
             </div>
           );
         })}

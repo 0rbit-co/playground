@@ -67,7 +67,7 @@ const MessagesDD = () => {
         )}
       </button>
       <div className={`max-h-[60px] ${mesToggle ? "overflow-y-scroll" : ""}`}>
-        {mesToggle && messArr
+        {mesToggle && messArr && curPid
           ? `
           ${messArr?.map((item, id) => {
             stripAnsiCodes(item.Data);

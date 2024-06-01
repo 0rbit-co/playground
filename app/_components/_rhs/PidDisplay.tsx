@@ -23,14 +23,15 @@ const PidDisplay = () => {
   return (
     <div className="relative h-[33px] w-full justify-start px-20 lg:flex hidden max-w-[1800px]">
       <div className="absolute left-0 z-10">
-        <div className="bg-[#EB8F44] bg-opacity-30 text-[#EB8F44] font-semibold border-2 border-[#EB8F44] text-sm rounded py-2 px-4 shadow-lg relative">
-          <div className="flex items-center">
+        <div className="bg-[#EB8F44] bg-opacity-30 text-[#EB8F44] font-semibold border-2 border-[#EB8F44] xl:text-sm lg:text-[11.1px] rounded py-2 px-4 shadow-lg relative">
+          <div className="flex items-center gap-[3px]">
             <h3>
-              {curPid
-                ? `Process ID: ${curPid}`
+              {!curPid
+                ? `Process ID: ${curPid}X8imk3qtfoRKYdyPJBR2jCYIqQcJVAMoNwlD26ejY6k
+                `
                 : `Please Connect Your Wallet First !!`}
             </h3>
-            {curPid ? (
+            {!curPid ? (
               copied ? (
                 <Image
                   alt="copy"
@@ -38,7 +39,8 @@ const PidDisplay = () => {
                   height={18}
                   width={18}
                   onClick={handleCopy}
-                  className="hover:cursor-pointer w-[18px] h-[18px] hover:bg-[#7f512a] rounded-md"
+                  className="hover:cursor-pointer xl:w-[18px] xl:h-[18px] lg:w-[15px] lg:h-[15px]
+                   hover:bg-[#7f512a] rounded-md"
                 />
               ) : (
                 <Image
@@ -47,7 +49,8 @@ const PidDisplay = () => {
                   height={18}
                   width={18}
                   onClick={handleCopy}
-                  className="hover:cursor-pointer w-[18px] h-[18px] hover:bg-[#7f512a] rounded-md"
+                  className="hover:cursor-pointer xl:w-[18px] xl:h-[18px] lg:w-[15px] lg:h-[15px]
+                   hover:bg-[#7f512a] rounded-md"
                 />
               )
             ) : (

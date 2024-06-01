@@ -67,20 +67,22 @@ const MessagesDD = () => {
         )}
       </button>
       <div className={`max-h-[60px] ${mesToggle ? "overflow-y-scroll" : ""}`}>
-        {mesToggle && messArr
+        {/* {mesToggle && messArr
           ? `
-          ${messArr?.map((item, id) => {
-            stripAnsiCodes(item.Data);
-            return (
-              <div className=" tracking-[1.5px]">
-                <span className="text-[#98e870]">{`Inbox[${
-                  id + 1
-                }].Data: `}</span>
-                {item.Data ? stripAnsiCodes(item.Data) : "No Data"}
-              </div>
-            );
-          })}`
-          : `${curPid && mesToggle ? "No Messages" : ""}`}
+          $*/}
+        {messArr?.map((item, id) => {
+          stripAnsiCodes(item.Data);
+          return (
+            <div className=" tracking-[1.5px]">
+              <span className="text-[#98e870]">{`Inbox[${
+                id + 1
+              }].Data: `}</span>
+              {item.Data ? stripAnsiCodes(item.Data) : "No Data"}
+            </div>
+          );
+        })}
+        {/* `
+          : `${curPid && mesToggle ? "No Messages" : ""}`} */}
       </div>
     </div>
   );

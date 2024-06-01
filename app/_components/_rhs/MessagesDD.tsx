@@ -38,19 +38,27 @@ const MessagesDD = () => {
           setMesToggle(!mesToggle);
         }}
         className={`flex flex-row justify-start gap-3 items-center
-        hover:tracking-widest transition-[all_0.3s] 
-        ${curPid ? "hover:cursor-pointer" : "hover:cursor-not-allowed"}`}
+         transition-[all_0.3s] 
+        ${
+          curPid
+            ? "hover:cursor-pointer hover:tracking-widest"
+            : "hover:cursor-not-allowed"
+        }`}
       >
         <h3 className="uppercase text-[15px] text-[#98e870]">
-          {mesToggle ? "Messages" : "Check Inbox"}
+          {curPid
+            ? `${mesToggle ? "Messages" : "Check Inbox"}`
+            : "Connect Wallet Above"}
         </h3>
-        <Image
-          src="/ddMes.png"
-          width={15}
-          height={21}
-          alt="dd"
-          className={`${mesToggle ? "rotate-180" : "rotate-0"}`}
-        />
+        {curPid && (
+          <Image
+            src="/ddMes.png"
+            width={15}
+            height={21}
+            alt="dd"
+            className={`${mesToggle ? "rotate-180" : "rotate-0"}`}
+          />
+        )}
       </button>
       <div className={`max-h-[60px] ${mesToggle ? "overflow-y-scroll" : ""}`}>
         {mesToggle &&

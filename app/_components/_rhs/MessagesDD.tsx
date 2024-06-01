@@ -10,15 +10,6 @@ const MessagesDD = () => {
   const messArr = useMessagesArrayStore((state) => state.messArr);
   const curPid = usePidStore((state) => state.curPid);
 
-  useEffect(() => {
-    {
-      curPid &&
-        setTimeout(() => {
-          getInbox("1", true);
-        }, 1000);
-    }
-  }, [messArr]);
-
   const stripAnsiCodes = (str: string) => {
     return str?.replace(
       /[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-ORZcf-nqry=><]/g,
@@ -45,7 +36,7 @@ const MessagesDD = () => {
             : "hover:cursor-not-allowed"
         }`}
       >
-        <div>
+        <div className="flex flex-row gap-3 items-center justify-start">
           <h3 className="uppercase text-[15px] text-[#98e870]">
             {curPid
               ? `${mesToggle ? "Messages" : "Check Inbox"}`
@@ -76,8 +67,9 @@ const MessagesDD = () => {
         )}
       </button>
       <div className={`max-h-[60px] ${mesToggle ? "overflow-y-scroll" : ""}`}>
-        {mesToggle &&
-          messArr?.map((item, id) => {
+        {mesToggle && messArr
+          ? `
+          ${messArr?.map((item, id) => {
             stripAnsiCodes(item.Data);
             return (
               <div className=" tracking-[1.5px]">
@@ -87,7 +79,8 @@ const MessagesDD = () => {
                 {item.Data ? stripAnsiCodes(item.Data) : "No Data"}
               </div>
             );
-          })}
+          })}`
+          : "No Messages"}
       </div>
     </div>
   );

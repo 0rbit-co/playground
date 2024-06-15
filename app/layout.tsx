@@ -38,6 +38,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta property="og:title" content="0rbit | Playground" />
+        <meta
+          property="og:description"
+          content="Decentralized Oracle on Arweave ecosystem for accessing off-chain data. Get data from any URL."
+        />
+        <meta property="og:image" content="/logos/sqDarkFill.svg" />
+        <meta property="og:url" content="https://www.playground.0rbit.co" />o
+        <meta property="og:type" content="website" />
         <Script
           strategy="lazyOnload"
           async

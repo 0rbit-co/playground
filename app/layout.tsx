@@ -43,7 +43,10 @@ export default function RootLayout({
           property="og:description"
           content="Decentralized Oracle on Arweave ecosystem for accessing off-chain data. Get data from any URL."
         />
-        <meta property="og:image" content="/logos/sqDarkFill.svg" />
+        <meta
+          property="og:image"
+          content="https://www.playground.0rbit.co/logos/sqDarkFill.svg"
+        />
         <meta property="og:url" content="https://www.playground.0rbit.co" />o
         <meta property="og:type" content="website" />
         <Script

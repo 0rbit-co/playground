@@ -45,7 +45,7 @@ export default function RootLayout({
         />
         <meta
           property="og:image"
-          content="https://www.playground.0rbit.co/logos/sqDarkFill.svg"
+          content="https://www.0rbit.co/logos/ogLogo.jpg"
         />
         <meta property="og:url" content="https://www.playground.0rbit.co" />o
         <meta property="og:type" content="website" />
